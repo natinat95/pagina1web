@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Iniciar Sesión</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styleForm.css">
+</head>
+<body id="cuerpoForm">
+    <header>
+        <div class="cabecera">
+            <h1>Miembros Club</h1>
+        </div>
+        <div class="icono">
+            <a href="index.html"><img src="img/cascos2.jpeg" alt="Logo del sitio de videos de música"></a>
+        </div>
+    </header>
+
+    <div class="form-container">
+        <div class="form-header">Iniciar Sesión</div>
+        <div class="containerForm">
+            <form id="loginForm" method="POST">
+                <div class="form-group">
+                    <input type="email" id="email" name="email" placeholder=" " required>
+                    <label for="email" class="floating-label">Email</label>
+                </div>
+                <div class="form-group">
+                    <input type="password" id="psw" name="psw" placeholder=" " required>
+                    <label for="psw" class="floating-label">Contraseña</label>
+                    <a href="#" id="viewPassword3" aria-label="Mostrar contraseña" onclick="togglePassword('psw', 'viewPassword3'); return false;">
+                        <i class="fas fa-eye"></i>  
+                    </a>
+                </div>
+                <button type="submit" class="registerbtn">Iniciar</button>
+            </form>
+            <div class="signin">
+                <p>¿No tienes una cuenta? <a href="registro.html"><b>Regístrate</b></a></p>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <div class="social-icons">
+            <a href="https://www.instagram.com/danifdezmusic/?hl=es" target="_blank"><i class="fab fa-instagram"></i></a>
+            <a href="https://www.youtube.com/channel/UCqV5TK3U78gh65XmJMsqP_Q" target="_blank"><i class="fab fa-youtube"></i></a>
+            <a href="https://x.com/danifdez?lang=es" target="_blank"><i class="fab fa-twitter"></i></a>
+        </div>
+        <p>&copy; 2024 Página de Videos de Música. Todos los derechos reservados.</p>
+    </footer>
+
+    <!-- Scripts al final para una mejor carga -->
+    <script src="https://www.gstatic.com/firebasejs/9.17.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.17.0/firebase-auth.js"></script>
+    <script type="module" src="login.js"></script>
+
+    <!-- Función togglePassword -->
+    <script>
+        function togglePassword(inputId, iconId) {
+            const passwordField = document.getElementById(inputId);
+            const icon = document.getElementById(iconId).querySelector('i');
+
+            if (passwordField.type === 'password') {
+                passwordField.type = 'text';
+                icon.className = 'fas fa-eye-slash';  // Cambia el ícono
+            } else {
+                passwordField.type = 'password';
+                icon.className = 'fas fa-eye';  // Cambia el ícono
+            }
+        }
+    </script>
+</body>
+</html>

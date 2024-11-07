@@ -1,0 +1,215 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Estilos generales */
+body {
+    font-family: 'Roboto', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #000000; 
+    box-sizing: border-box; /* Asegura que el padding y borde no afecten al tamaño total de los elementos */
+}
+
+header {
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 70px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #000000;
+    color: #ffffff;
+    padding: 10px;
+    border-radius: 15px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+    border: 2px solid #ea210b;
+    z-index: 1000;
+    position: relative;
+}
+
+/* Estilos para el icono */
+.icono {
+    position: absolute;
+    left: 20px;
+}
+.icono img {
+    height: 50px;
+    border-radius: 50%;
+}
+
+/* Asegurando que el logo esté a la derecha */
+header .logo {
+    display: flex;
+    align-items: center;
+    position: absolute;
+    right: 20px;
+}
+
+header .logo img {
+    height: 35px;
+    border-radius: 30px;
+}
+
+/* Galería de imágenes */
+.gallery {
+    margin-top: 20px; /* Ajusta al alto del header */
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* 3 columnas iguales */
+    gap: 20px; /* Espacio entre las imágenes */
+    justify-items: center; /* Centra las imágenes dentro de cada celda */
+    margin-bottom: 20px;
+}
+
+.photo {
+    width: 100%; /* Asegura que cada contenedor de foto ocupe el 100% de la columna asignada */
+    overflow: hidden; /* Oculta cualquier contenido que se desborde */
+}
+
+.photo img {
+    width: 100%; /* Las imágenes ocupan el 100% del ancho de su contenedor */
+    height: 100%; /* Las imágenes ocupan el 100% de la altura de su contenedor */
+    object-fit: cover; /* Mantiene la proporción y ajusta la imagen para que ocupe toda la celda */
+    border-radius: 20px;
+}
+
+.gallery h2 {
+    text-align: center;
+}
+
+/* Footer */
+footer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #000000;
+    color: #ffffff;
+    padding: 10px;
+    border: 2px solid #ea210b;
+    border-radius: 15px;
+}
+
+footer .social-icons a {
+    color: #ffffff;
+    margin: 0 10px;
+    font-size: 1.5em;
+    transition: color 0.3s ease;
+}
+
+footer .social-icons a:hover {
+    color: #ea210b;
+}
+
+footer p {
+    margin-top: 10px;
+    font-size: 0.9em;
+}
+
+/*MEDIA QUERY*/
+
+/* Media Query para iPhone 14 y dispositivos de ancho similar */
+@media (max-width: 430px) {
+    header {
+        height: 60px;
+        padding: 5px;
+    }
+
+    .icono img {
+        height: 35px; /* Ajusta el tamaño del icono */
+    }
+
+    header h1 {
+        font-size: 1.4em; /* Reduce el tamaño del título si es necesario */
+    }
+
+    header .logo img {
+        height: 28px; /* Ajusta el tamaño del logo */
+    }
+
+    .gallery {
+        grid-template-columns: 1fr; /* Una columna para una mejor visualización en pantalla estrecha */
+        gap: 12px; /* Menor espacio entre imágenes */
+        margin-top: 90px; /* Ajuste adicional para evitar que el contenido se superponga al header */
+    }
+
+    .photo img {
+        object-fit: cover;
+    }
+
+    footer .social-icons a {
+        font-size: 1.1em; /* Reducir el tamaño de los íconos de redes sociales */
+    }
+
+    footer p {
+        font-size: 0.75em; /* Reducir el tamaño del texto en el footer */
+    }
+}
+
+/* Media Query para pantallas pequeñas (móviles) */
+@media (max-width: 600px) {
+    header {
+        height: 60px;
+        padding: 5px;
+    }
+
+    .icono img {
+        height: 40px;
+    }
+
+    header .logo img {
+        height: 30px;
+    }
+
+    .gallery {
+        grid-template-columns: 1fr;
+        gap: 15px;
+        margin-top: 80px; /* Ajuste opcional para dar espacio al header */
+    }
+
+    .photo img {
+        object-fit: cover;
+    }
+
+    footer .social-icons a {
+        font-size: 1.2em;
+    }
+
+    footer p {
+        font-size: 0.8em;
+    }
+}
+
+/* Media Query para tablets (pantallas medianas) */
+@media (max-width: 768px) {
+    header {
+        height: 65px;
+    }
+
+    .icono img {
+        height: 45px;
+    }
+
+    header .logo img {
+        height: 32px;
+    }
+
+    .gallery {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 18px;
+    }
+
+    .photo img {
+        object-fit: cover;
+    }
+
+    footer .social-icons a {
+        font-size: 1.4em;
+    }
+
+    footer p {
+        font-size: 0.9em;
+    }
+}
