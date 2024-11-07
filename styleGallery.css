@@ -1,16 +1,16 @@
+/* General */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
-/* Estilos generales */
 body {
     font-family: 'Roboto', sans-serif;
     margin: 0;
     padding: 0;
     background-color: #000000; 
-    box-sizing: border-box; /* Asegura que el padding y borde no afecten al tamaño total de los elementos */
+    box-sizing: border-box;
 }
 
 header {
@@ -41,7 +41,7 @@ header {
     border-radius: 50%;
 }
 
-/* Asegurando que el logo esté a la derecha */
+/* Logo */
 header .logo {
     display: flex;
     align-items: center;
@@ -56,7 +56,7 @@ header .logo img {
 
 /* Galería de imágenes */
 .gallery {
-    margin-top: 20px; /* Ajusta al alto del header */
+    margin-top: 20px; /* Ajusta el alto del header */
     display: grid;
     grid-template-columns: repeat(3, 1fr); /* 3 columnas iguales */
     gap: 20px; /* Espacio entre las imágenes */
@@ -74,10 +74,6 @@ header .logo img {
     height: 100%; /* Las imágenes ocupan el 100% de la altura de su contenedor */
     object-fit: cover; /* Mantiene la proporción y ajusta la imagen para que ocupe toda la celda */
     border-radius: 20px;
-}
-
-.gallery h2 {
-    text-align: center;
 }
 
 /* Footer */
@@ -108,17 +104,15 @@ footer p {
     font-size: 0.9em;
 }
 
-/*MEDIA QUERY*/
-
-/* Media Query para iPhone 14 y dispositivos de ancho similar */
-@media (max-width: 430px) {
+/* Media Query para dispositivos móviles pequeños */
+@media (max-width: 480px) {
     header {
         height: 60px;
         padding: 5px;
     }
 
     .icono img {
-        height: 35px; /* Ajusta el tamaño del icono */
+        height: 25px; /* Ajusta el tamaño del icono */
     }
 
     header h1 {
@@ -132,7 +126,7 @@ footer p {
     .gallery {
         grid-template-columns: 1fr; /* Una columna para una mejor visualización en pantalla estrecha */
         gap: 12px; /* Menor espacio entre imágenes */
-        margin-top: 90px; /* Ajuste adicional para evitar que el contenido se superponga al header */
+        margin-top: 70px; /* Ajuste adicional para evitar que el contenido se superponga al header */
     }
 
     .photo img {
@@ -148,7 +142,7 @@ footer p {
     }
 }
 
-/* Media Query para pantallas pequeñas (móviles) */
+/* Media Query para pantallas móviles medianas */
 @media (max-width: 600px) {
     header {
         height: 60px;
@@ -156,7 +150,7 @@ footer p {
     }
 
     .icono img {
-        height: 40px;
+        height: 35px;
     }
 
     header .logo img {
@@ -164,7 +158,7 @@ footer p {
     }
 
     .gallery {
-        grid-template-columns: 1fr;
+        grid-template-columns: 1fr; /* Una columna en pantallas móviles pequeñas */
         gap: 15px;
         margin-top: 80px; /* Ajuste opcional para dar espacio al header */
     }
@@ -182,14 +176,14 @@ footer p {
     }
 }
 
-/* Media Query para tablets (pantallas medianas) */
+/* Media Query para tablets */
 @media (max-width: 768px) {
     header {
         height: 65px;
     }
 
     .icono img {
-        height: 45px;
+        height: 35px;
     }
 
     header .logo img {

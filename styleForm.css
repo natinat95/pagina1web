@@ -12,7 +12,7 @@ body {
     padding: 0;
     font-family: 'Roboto', sans-serif;
     box-sizing: border-box; /* Asegura que el padding y borde no afecten al tamaño total de los elementos */
-
+   
 }
 
 /* Header para Login y Registro */
@@ -53,6 +53,8 @@ header {
     background-image: url('img/fondomolon.jpg');
     background-size: cover;
     background-position: center;
+    padding-top: 20px; /* Añadir espacio arriba del formulario */
+    padding-bottom: 20px;
 }
 
 /* Encabezado del Formulario */
@@ -186,7 +188,7 @@ p {
 }
 
 a:hover {
-    color: #ffffff;
+    color: #000000;
 }
 
 /* Footer */
@@ -223,7 +225,9 @@ footer p {
     header h1 {
         font-size: 1.5em;
     }
-
+    .icono img {
+        height: 35px;
+    }
     .form-container {
         padding: 10px;
     }
@@ -240,6 +244,9 @@ footer p {
 
     .registerbtn {
         font-size: 0.9em;
+    }
+    .icono img {
+        height: 25px; /* Ajusta el tamaño del icono */
     }
 
     .social-icons a {

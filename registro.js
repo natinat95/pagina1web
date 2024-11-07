@@ -52,7 +52,8 @@ document.getElementById('registerForm').addEventListener('submit', function (eve
                 name: name,
                 lname: lname,
                 email: email,
-                registrationDate: new Date().toISOString()  // Fecha y hora de registro
+                registrationDate: new Date().toLocaleDateString(),  // Solo la fecha, como dd/mm/yyyy
+                registrationTime: new Date().toLocaleTimeString()   // Solo la hora, como hh:mm:ss
             };
 
             // Guardar los datos en Firestore bajo el UID del usuario
