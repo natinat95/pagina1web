@@ -35,13 +35,16 @@ document.getElementById('loginForm').addEventListener('submit', function (event)
             const loginDate = now.toLocaleDateString(); // Solo la fecha (dd/mm/yyyy)
             const loginTime = now.toLocaleTimeString(); // Solo la hora (hh:mm:ss)
 
-            // Guardar la fecha y la hora de inicio de sesión en Firestore (sobrescribiendo el campo lastLogin)
+            console.log('Fecha de login:', loginDate);
+            console.log('Hora de login:', loginTime);
+
+            // Guardar la fecha y la hora de inicio de sesión en Firestore
             setDoc(doc(db, 'users', userCredential.user.uid), {
                 lastLoginDate: loginDate,  // Guardar solo la fecha
                 lastLoginTime: loginTime,  // Guardar solo la hora
             }, { merge: true }) // merge: true para no sobrescribir otros datos del usuario
             .then(() => {
-                console.log('Fecha y hora de login actualizadas');
+                console.log('Fecha y hora de login actualizadas en Firestore');
             })
             .catch((error) => {
                 console.error('Error guardando la fecha de login: ', error);
