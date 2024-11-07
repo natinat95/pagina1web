@@ -56,11 +56,11 @@ header .logo img {
 
 /* Galería de imágenes */
 .gallery {
-    margin-top: 20px; /* Ajusta el alto del header */
+    margin-top: 20px; /* Ajustar a 0 para eliminar el margen superior */
     display: grid;
-    grid-template-columns: repeat(3, 1fr); /* 3 columnas iguales */
-    gap: 20px; /* Espacio entre las imágenes */
-    justify-items: center; /* Centra las imágenes dentro de cada celda */
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    justify-items: center;
     margin-bottom: 20px;
 }
 
@@ -104,29 +104,22 @@ footer p {
     font-size: 0.9em;
 }
 
-/* Media Query para dispositivos móviles pequeños */
-@media (max-width: 480px) {
+
+/* Media Query para tablets */
+@media (max-width: 768px) {
     header {
-        height: 60px;
-        padding: 5px;
+        height: 65px;
     }
 
-    .icono img {
-        height: 25px; /* Ajusta el tamaño del icono */
-    }
-
-    header h1 {
-        font-size: 1.4em; /* Reduce el tamaño del título si es necesario */
-    }
+  
 
     header .logo img {
-        height: 28px; /* Ajusta el tamaño del logo */
+        height: 32px;
     }
 
     .gallery {
-        grid-template-columns: 1fr; /* Una columna para una mejor visualización en pantalla estrecha */
-        gap: 12px; /* Menor espacio entre imágenes */
-        margin-top: 70px; /* Ajuste adicional para evitar que el contenido se superponga al header */
+        grid-template-columns: 1fr; /* Una columna en dispositivos móviles */
+        gap: 18px;
     }
 
     .photo img {
@@ -134,11 +127,11 @@ footer p {
     }
 
     footer .social-icons a {
-        font-size: 1.1em; /* Reducir el tamaño de los íconos de redes sociales */
+        font-size: 1.4em;
     }
 
     footer p {
-        font-size: 0.75em; /* Reducir el tamaño del texto en el footer */
+        font-size: 0.9em;
     }
 }
 
@@ -149,9 +142,6 @@ footer p {
         padding: 5px;
     }
 
-    .icono img {
-        height: 35px;
-    }
 
     header .logo img {
         height: 30px;
@@ -160,7 +150,7 @@ footer p {
     .gallery {
         grid-template-columns: 1fr; /* Una columna en pantallas móviles pequeñas */
         gap: 15px;
-        margin-top: 80px; /* Ajuste opcional para dar espacio al header */
+        
     }
 
     .photo img {
@@ -176,23 +166,25 @@ footer p {
     }
 }
 
-/* Media Query para tablets */
-@media (max-width: 768px) {
+/* Media Query para dispositivos móviles pequeños */
+@media (max-width: 480px) {
     header {
-        height: 65px;
+        height: 60px;
+        padding: 5px;
     }
 
-    .icono img {
-        height: 35px;
+
+    header h1 {
+        font-size: 1.4em; /* Reduce el tamaño del título si es necesario */
     }
 
     header .logo img {
-        height: 32px;
+        height: 28px; /* Ajusta el tamaño del logo */
     }
 
     .gallery {
-        grid-template-columns: repeat(2, 1fr);
-        gap: 18px;
+        grid-template-columns: 1fr; /* Una columna para una mejor visualización en pantalla estrecha */
+        gap: 12px; /* Menor espacio entre imágenes */
     }
 
     .photo img {
@@ -200,10 +192,10 @@ footer p {
     }
 
     footer .social-icons a {
-        font-size: 1.4em;
+        font-size: 1.1em; /* Reducir el tamaño de los íconos de redes sociales */
     }
 
     footer p {
-        font-size: 0.9em;
+        font-size: 0.75em; /* Reducir el tamaño del texto en el footer */
     }
 }

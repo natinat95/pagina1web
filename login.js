@@ -1,6 +1,6 @@
 import { getAuth, signInWithEmailAndPassword } from "https://www.gstatic.com/firebasejs/9.17.0/firebase-auth.js";
 import { initializeApp } from "https://www.gstatic.com/firebasejs/9.17.0/firebase-app.js";
-import { getFirestore, setDoc, doc } from "https://www.gstatic.com/firebasejs/9.17.0/firebase-firestore.js"; 
+import { getFirestore, setDoc, doc } from "https://www.gstatic.com/firebasejs/9.17.0/firebase-firestore.js";
 
 // Configuración de Firebase
 const firebaseConfig = {
@@ -17,6 +17,7 @@ const firebaseConfig = {
 const app = initializeApp(firebaseConfig);
 const auth = getAuth(app); // Obtener la instancia de Auth
 const db = getFirestore(app);
+
 // Función para manejar el inicio de sesión
 document.getElementById('loginForm').addEventListener('submit', function (event) {
     event.preventDefault(); // Prevenir el envío normal del formulario
@@ -29,15 +30,18 @@ document.getElementById('loginForm').addEventListener('submit', function (event)
             // Iniciar sesión exitosamente
             console.log('Usuario autenticado:', userCredential.user);
 
-            // Obtener la fecha y hora actuales en formato ISO
-            const loginDate = new Date().toISOString();
+            // Obtener la fecha y la hora actuales por separado
+            const now = new Date();
+            const loginDate = now.toLocaleDateString(); // Solo la fecha (dd/mm/yyyy)
+            const loginTime = now.toLocaleTimeString(); // Solo la hora (hh:mm:ss)
 
-            // Guardar la fecha y hora de inicio de sesión en Firestore
+            // Guardar la fecha y la hora de inicio de sesión en Firestore (sobrescribiendo el campo lastLogin)
             setDoc(doc(db, 'users', userCredential.user.uid), {
-                lastLogin: loginDate, // Guardamos la fecha de último inicio de sesión
-            }, { merge: true }) // merge: true para no sobrescribir otros datos
+                lastLoginDate: loginDate,  // Guardar solo la fecha
+                lastLoginTime: loginTime,  // Guardar solo la hora
+            }, { merge: true }) // merge: true para no sobrescribir otros datos del usuario
             .then(() => {
-                console.log('Fecha y hora de login guardada');
+                console.log('Fecha y hora de login actualizadas');
             })
             .catch((error) => {
                 console.error('Error guardando la fecha de login: ', error);
