@@ -111,7 +111,9 @@ footer p {
         height: 65px;
     }
 
-  
+    .icono img {
+        height: 40px;
+    }
 
     header .logo img {
         height: 32px;
@@ -142,7 +144,9 @@ footer p {
         padding: 5px;
     }
 
-
+    .icono img {
+        height: 35px;
+    }
     header .logo img {
         height: 30px;
     }
@@ -173,7 +177,9 @@ footer p {
         padding: 5px;
     }
 
-
+    .icono img {
+        height: 30px; /* Ajusta el tamaño del ícono */
+    }
     header h1 {
         font-size: 1.4em; /* Reduce el tamaño del título si es necesario */
     }

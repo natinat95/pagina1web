@@ -225,7 +225,9 @@ footer p {
     header h1 {
         font-size: 1.5em;
     }
-  
+    .icono img {
+        height: 40px;
+    }
     .form-container {
         padding: 10px;
     }
@@ -239,7 +241,9 @@ footer p {
     header h1 {
         font-size: 1.2em;
     }
-
+    .icono img {
+        height: 30px; /* Ajusta el tamaño del ícono */
+    }
     .registerbtn {
         font-size: 0.9em;
     }
