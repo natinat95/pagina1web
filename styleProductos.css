@@ -107,6 +107,23 @@ footer p {
 
 /* Media Query para tabletas y pantallas medianas (menos de 768px) */
 @media (max-width: 768px) {
+    header {
+        height: 60px;
+        padding: 5px;
+    }
+ 
+    header h1 {
+        font-size: 1.5em;
+    }
+
+    .icono img {
+        height: 45px;
+    }
+
+    header .logo img {
+        height: 32px;
+    }
+
     .product-card {
         width: 45%; /* Ocupa aproximadamente la mitad del contenedor */
         min-height: 450px;
@@ -120,6 +137,19 @@ footer p {
 
 /* Media Query para pantallas móviles pequeñas (menos de 600px) */
 @media (max-width: 600px) {
+    header {
+        height: 60px;
+        padding: 5px;
+    }
+    header h1 {
+        font-size: 1.2em;
+    }
+    .icono img {
+        height: 35px;
+    }
+    header .logo img {
+        height: 30px;
+    }
     .product-card {
         width: 100%; /* Ocupa el 100% del ancho en móviles */
         min-height: 450px;
