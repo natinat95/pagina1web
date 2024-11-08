@@ -30,21 +30,19 @@ document.getElementById('loginForm').addEventListener('submit', function (event)
             // Iniciar sesión exitosamente
             console.log('Usuario autenticado:', userCredential.user);
 
-            // Obtener la fecha y la hora actuales
+            // Obtener la hora actual
             const now = new Date();
-            const loginDate = now.toLocaleDateString(); // Solo la fecha (dd/mm/yyyy)
-            const loginTime = now.toLocaleTimeString(); // Solo la hora (hh:mm:ss)
+            const loginTime = formatTime(now); // Formatear solo la hora (hh:mm:ss)
 
-            // Guardar la fecha y la hora de inicio de sesión en Firestore
+            // Guardar la hora de inicio de sesión en Firestore
             setDoc(doc(db, 'users', userCredential.user.uid), {
-                lastLoginDate: loginDate,  // Guardar solo la fecha
-                lastLoginTime: loginTime,  // Guardar solo la hora
+                lastLoginTime: loginTime,  // Guardar solo la hora de inicio de sesión
             }, { merge: true }) // merge: true para no sobrescribir otros datos del usuario
             .then(() => {
-                console.log('Fecha y hora de login actualizadas');
+                console.log('Hora de login actualizada');
             })
             .catch((error) => {
-                console.error('Error guardando la fecha de login: ', error);
+                console.error('Error guardando la hora de login: ', error);
             });
 
             alert('Inicio de sesión exitoso');
@@ -55,3 +53,11 @@ document.getElementById('loginForm').addEventListener('submit', function (event)
             alert(error.message);
         });
 });
+
+// Función para formatear solo la hora (hh:mm:ss)
+function formatTime(date) {
+    const hours = String(date.getHours()).padStart(2, '0');
+    const minutes = String(date.getMinutes()).padStart(2, '0');
+    const seconds = String(date.getSeconds()).padStart(2, '0');
+    return `${hours}:${minutes}:${seconds}`;
+}
