@@ -1,4 +1,4 @@
-/* Normalización y estilos básicos */
+/* Reset y estilos globales */
 * {
     margin: 0;
     padding: 0;
@@ -14,10 +14,9 @@ body {
     justify-content: flex-start;
     align-items: center;
     height: 100vh;
-    overflow-x: hidden; /* Permite scroll vertical */
+    overflow-x: hidden;
 }
 
-/* Contenedor principal */
 .container {
     display: flex;
     flex-direction: column;
@@ -26,7 +25,7 @@ body {
     flex-grow: 1;
 }
 
-/* Header para Login y Registro */
+/* Header */
 header {
     top: 0;
     left: 0;
@@ -62,10 +61,11 @@ header {
     gap: 20px;
     justify-content: center;
     margin-top: 20px;
+    margin-bottom: 20px;
     width: 100%;
 }
 
-/* Estilos para el footer */
+/* Footer */
 footer {
     width: 100%;
     background-color: #000000;
@@ -94,136 +94,38 @@ footer p {
     font-size: 0.9em;
 }
 
-/* Media Queries */
-
-/* Normalización y estilos básicos */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
-body {
-    font-family: 'Roboto', sans-serif;
-    background-color: #000;
-    color: #fff;
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
-    align-items: center;
-    height: 100vh;
-    overflow-x: hidden; /* Permite scroll vertical */
-}
-
-/* Contenedor principal */
-.container {
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
-    width: 100%;
-    flex-grow: 1;
-}
-
-/* Header para Login y Registro */
-header {
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 70px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background-color: #000000;
-    color: #ffffff;
-    padding: 10px;
-    border-radius: 15px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
-    border: 2px solid #ea210b;
-    z-index: 1000;
-    position: relative;
-}
-
-.icono {
-    position: absolute;
-    left: 20px;
-}
-
-.icono img {
-    height: 50px;
-    border-radius: 50%;
-}
-
-/* Contenedor de productos */
+/* Estilos generales para la cuadrícula de productos */
 .productos {
     display: flex;
     flex-wrap: wrap;
     gap: 20px;
     justify-content: center;
     margin-top: 20px;
+    margin-bottom: 20px;
     width: 100%;
 }
 
-/* Estilos para el footer */
-footer {
-    width: 100%;
-    background-color: #000000;
-    color: #ffffff;
-    padding: 10px;
-    text-align: center;
-    border-radius: 15px;
-    box-shadow: 0 -4px 10px rgba(0, 0, 0, 0.5);
-    border: 2px solid #ea210b;
-    margin-top: auto;
-}
-
-footer .social-icons a {
-    color: #ffffff;
-    margin: 0 10px;
-    font-size: 1.5em;
-    transition: color 0.3s ease;
-}
-
-footer .social-icons a:hover {
-    color: #ea210b;
-}
-
-footer p {
-    margin-top: 10px;
-    font-size: 0.9em;
-}
-
-/* Media Queries */
-
-@media (max-width: 480px) {
-    header {
-        height: 60px;
-        padding: 5px;
-       
-    }
-    header h1 {
-        font-size: 1.2em;
-    }
-    .icono img {
-        height: 35px; /* Ajusta el tamaño del ícono */
-    }
-    header h1 {
-        font-size: 1.4em; /* Reduce el tamaño del título si es necesario */
-    }
-
-    header .logo img {
-        height: 28px; /* Ajusta el tamaño del logo */
+/* Media Query para tabletas y pantallas medianas (menos de 768px) */
+@media (max-width: 768px) {
+    .product-card {
+        width: 45%; /* Ocupa aproximadamente la mitad del contenedor */
+        min-height: 450px;
     }
 
     .productos {
-        gap: 10px; /* Espacio entre elementos */
-        justify-content: space-between; /* Asegura que los elementos estén espaciados correctamente */
+        gap: 10px;
+        justify-content: space-around;
+    }
+}
+
+/* Media Query para pantallas móviles pequeñas (menos de 600px) */
+@media (max-width: 600px) {
+    .product-card {
+        width: 100%; /* Ocupa el 100% del ancho en móviles */
+        min-height: 450px;
     }
 
-    .productos > div {
-        width: 45%; /* Ajusta el tamaño de los contenedores internos para que ocupen el 45% del ancho */
-        /* Esto permite que haya 2 elementos por fila, manteniendo espacio entre ellos */
-    }
-    footer p {
-        font-size: 0.8em;
+    .productos {
+        gap: 10px;
     }
 }
