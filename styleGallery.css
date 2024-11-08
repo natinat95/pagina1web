@@ -64,6 +64,7 @@ header .logo img {
     margin-bottom: 20px;
 }
 
+
 .photo {
     width: 100%; /* Asegura que cada contenedor de foto ocupe el 100% de la columna asignada */
     overflow: hidden; /* Oculta cualquier contenido que se desborde */
@@ -183,6 +184,7 @@ footer p {
     header {
         height: 60px;
         padding: 5px;
+       
     }
     header h1 {
         font-size: 1.2em;

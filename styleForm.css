@@ -1,25 +1,45 @@
-/* Normalización y estilos básicos */
+/* Estilos básicos */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
-body,html {
-    background-color: #000000;
-    color: #000000;
-    margin: 0;
-    padding: 0;
+body,
+html {
+    height: 100%;
+    /* Para que la página ocupe toda la altura */
+    display: flex;
+    flex-direction: column;
     font-family: 'Roboto', sans-serif;
-    box-sizing: border-box; /* Asegura que el padding y borde no afecten al tamaño total de los elementos */
-   height: 100%;
-   display: flex;
-   flex-direction: column;
-   background-image: url('img/fondomolon.jpg');
-   background-size: cover;
-   background-position: center;
+    color: #000000;
+    background-color: #000000;
+    background-image: url('img/fondomolon.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
 }
 
+/* Contenedor principal */
+main {
+    flex-grow: 1;
+    /* Para que el contenido principal ocupe el espacio restante */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* Contenedor del Formulario */
+.form-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 80vh;
+    margin-top: auto;
+    padding: 20px;
+    width: 100%;
+}
 
 /* Header para Login y Registro */
 header {
@@ -37,8 +57,10 @@ header {
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
     border: 2px solid #ea210b;
     z-index: 1000;
-    position: relative; /* Se asegura de que el contenido dentro de header se posicione respecto a este */
+    position: relative;
+    /* Se asegura de que el contenido dentro de header se posicione respecto a este */
 }
+
 .icono {
     position: absolute;
     left: 20px;
@@ -47,18 +69,6 @@ header {
 .icono img {
     height: 50px;
     border-radius: 50%;
-}
-
-/* Contenedor del Formulario */
-.form-container {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    min-height: 80vh;
-   
-    padding-top: 20px; /* Añadir espacio arriba del formulario */
-    padding-bottom: 20px;
 }
 
 /* Encabezado del Formulario */
@@ -86,6 +96,7 @@ header h1 {
     font-size: 1.8em;
     margin: 0;
 }
+
 /* Contenedor de los campos del formulario */
 .containerForm {
     width: 100%;
@@ -122,8 +133,8 @@ input[type="date"] {
     transition: 0.2s ease all;
 }
 
-input:focus + .floating-label,
-input:not(:placeholder-shown) + .floating-label {
+input:focus+.floating-label,
+input:not(:placeholder-shown)+.floating-label {
     top: -10px;
     font-size: 0.8em;
     color: #000000;
@@ -173,20 +184,23 @@ input:focus {
 
 .form-group-ch input[type="checkbox"] {
     margin-right: 10px;
-    
+
 }
 
 a {
-    color:  #ea210b;
+    color: #ea210b;
     text-decoration: none;
-    font-weight: bold; /*negrita*/
-   
+    font-weight: bold;
+    /*negrita*/
+
 }
 
 label[for="consent"] {
-    font-size: 0.9em; /* Ajusta el tamaño a lo que necesites */
+    font-size: 0.9em;
+    /* Ajusta el tamaño a lo que necesites */
     margin-bottom: 10px;
 }
+
 p {
     text-align: center;
 }
@@ -205,7 +219,7 @@ footer {
     padding: 10px;
     border: 2px solid #ea210b;
     border-radius: 15px;
-   margin-top: auto;
+    margin-top: auto;
 }
 
 footer .social-icons a {
@@ -229,9 +243,11 @@ footer p {
     header h1 {
         font-size: 1.5em;
     }
+
     .icono img {
         height: 45px;
     }
+
     .form-container {
         padding: 10px;
     }
@@ -245,9 +261,12 @@ footer p {
     header h1 {
         font-size: 1.2em;
     }
+
     .icono img {
-        height: 35px; /* Ajusta el tamaño del ícono */
+        height: 35px;
+        /* Ajusta el tamaño del ícono */
     }
+
     .registerbtn {
         font-size: 0.9em;
     }

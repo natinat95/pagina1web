@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="description" content="Página de productos de Dani Fernández">
+  <meta name="author" content="Tu Nombre">
+  <meta name="keywords" content="productos, música, Dani Fernández">
+  <title>Productos Dani Fernández</title>
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Open+Sans:wght@300;600&display=swap" rel="stylesheet">
+
+  <!-- Font Awesome -->
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+
+  <!-- Normalize CSS -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css">
+
+  <!-- Estilos CSS propios -->
+  <link rel="stylesheet" href="styleProductos.css">
+
+  <!-- Web Component para tarjetas de productos -->
+  <script src="productos.js" defer></script>
+</head>
+
+<body>
+
+  <div class="container">
+    <header>
+      <div class="cabecera">
+        <h1>Entradas Conciertos</h1>
+      </div>
+      <div class="icono">
+        <a href="index.html"><img src="img/cascos2.jpeg" alt="Logo del sitio de videos de música"></a>
+      </div>
+    </header>
+
+    <main>
+      <div class="productos">
+
+        <product-card>
+          <img slot="image" src="img/alvaro.jpg" alt="Concierto 2">
+          <h3 slot="title">8 enero</h3>
+          <p slot="description">Madrid</p>
+          <p slot="price">29€</p>
+        </product-card>
+
+        <product-card>
+          <img slot="image" src="img/dani2.jpg" alt="Concierto 3">
+          <h3 slot="title">20 enero</h3>
+          <p slot="description">Bilbao </p>
+          <p slot="price">35€</p>
+        </product-card>
+
+        <product-card>
+          <img slot="image" src="img/dudas.jpg" alt="Concierto 4">
+          <h3 slot="title">8 febrero </h3>
+          <p slot="description">Murcia</p>
+          <p slot="price">42€</p>
+        </product-card>
+
+        <product-card>
+          <img slot="image" src="img/criminal.jpg" alt="Concierto 5">
+          <h3 slot="title">4 marzo</h3>
+          <p slot="description">Alciante</p>
+          <p slot="price">50€</p>
+        </product-card>
+      </div>
+    </main>
+
+
+    <footer>
+      <div class="social-icons">
+        <a href="https://www.instagram.com/danifdezmusic/?hl=es" target="_blank"><i class="fab fa-instagram"></i></a>
+        <a href="https://www.youtube.com/channel/UCqV5TK3U78gh65XmJMsqP_Q" target="_blank"><i class="fab fa-youtube"></i></a>
+        <a href="https://x.com/danifdez?lang=es" target="_blank"><i class="fab fa-twitter"></i></a>
+      </div>
+      <p>&copy; 2024 Página de Videos de Música. Todos los derechos reservados.</p>
+    </footer>
+  </div>
+
+</body>
+
+</html>
