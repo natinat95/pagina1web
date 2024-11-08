@@ -85,6 +85,7 @@ footer {
     color: #ffffff;
     padding: 10px;
     border: 2px solid #ea210b;
+    text-align: center;
     border-radius: 15px;
 }
 
@@ -108,7 +109,12 @@ footer p {
 /* Media Query para tablets */
 @media (max-width: 768px) {
     header {
-        height: 65px;
+        height: 60px;
+        padding: 5px;
+    }
+ 
+    header h1 {
+        font-size: 1.5em;
     }
 
     .icono img {
@@ -143,7 +149,9 @@ footer p {
         height: 60px;
         padding: 5px;
     }
-
+    header h1 {
+        font-size: 1.2em;
+    }
     .icono img {
         height: 35px;
     }
@@ -176,7 +184,9 @@ footer p {
         height: 60px;
         padding: 5px;
     }
-
+    header h1 {
+        font-size: 1.2em;
+    }
     .icono img {
         height: 35px; /* Ajusta el tamaño del ícono */
     }
