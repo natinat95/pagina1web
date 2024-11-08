@@ -14,7 +14,7 @@ body {
     justify-content: flex-start;
     align-items: center;
     height: 100vh;
-    overflow: hidden;
+    overflow-x: hidden; /* Permite scroll vertical */
 }
 
 /* Contenedor principal */
@@ -23,7 +23,7 @@ body {
     flex-direction: column;
     justify-content: flex-start;
     width: 100%;
-    flex-grow: 1; /* Hace que el contenido ocupe el espacio disponible */
+    flex-grow: 1;
 }
 
 /* Header para Login y Registro */
@@ -42,8 +42,9 @@ header {
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
     border: 2px solid #ea210b;
     z-index: 1000;
-    position: relative; /* Se asegura de que el contenido dentro de header se posicione respecto a este */
+    position: relative;
 }
+
 .icono {
     position: absolute;
     left: 20px;
@@ -53,6 +54,7 @@ header {
     height: 50px;
     border-radius: 50%;
 }
+
 /* Contenedor de productos */
 .productos {
     display: flex;
@@ -73,8 +75,7 @@ footer {
     border-radius: 15px;
     box-shadow: 0 -4px 10px rgba(0, 0, 0, 0.5);
     border: 2px solid #ea210b;
-    box-sizing: border-box; /* Incluye el padding y el borde en el cálculo del ancho */
-    margin-top: auto; /* Asegura que el footer se coloque al final de la página */
+    margin-top: auto;
 }
 
 footer .social-icons a {
@@ -82,7 +83,6 @@ footer .social-icons a {
     margin: 0 10px;
     font-size: 1.5em;
     transition: color 0.3s ease;
- 
 }
 
 footer .social-icons a:hover {
@@ -98,20 +98,34 @@ footer p {
 
 @media (max-width: 480px) {
     header {
-        flex-direction: column;
-        align-items: flex-start;
-        padding: 10px;
+        height: 60px;
+        padding: 5px;
+       
+    }
+    header h1 {
+        font-size: 1.2em;
+    }
+    .icono img {
+        height: 35px; /* Ajusta el tamaño del ícono */
+    }
+    header h1 {
+        font-size: 1.4em; /* Reduce el tamaño del título si es necesario */
     }
 
-    .icono {
-        position: relative;
-        left: 0;
-        top: 0;
-        transform: none; /* El logo no debe ser flotante */
+    header .logo img {
+        height: 28px; /* Ajusta el tamaño del logo */
     }
 
-    header .logo {
-        position: relative;
-        right: 0;
+    .productos {
+        gap: 10px; /* Espacio entre elementos */
+        justify-content: space-between; /* Asegura que los elementos estén espaciados correctamente */
+    }
+
+    .productos > div {
+        width: 45%; /* Ajusta el tamaño de los contenedores internos para que ocupen el 45% del ancho */
+        /* Esto permite que haya 2 elementos por fila, manteniendo espacio entre ellos */
+    }
+    footer p {
+        font-size: 0.8em;
     }
 }

@@ -255,6 +255,9 @@ footer p {
     .containerForm {
         padding: 15px;
     }
+    footer {
+        margin-top: 10px;
+    }
 }
 
 @media (max-width: 480px) {
@@ -273,5 +276,15 @@ footer p {
 
     .social-icons a {
         font-size: 1.2em;
+    }
+     /* Eliminar márgenes adicionales */
+     .form-container, .containerForm {
+        margin-bottom: 0; /* Elimina margen inferior */
+        padding-bottom: 0; /* Elimina padding inferior */
+    }
+
+    /* Ajustar espacio entre el formulario y el footer */
+    footer {
+        margin-top: 5px; /* Ajusta el margen superior del footer */
     }
 }
