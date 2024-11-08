@@ -29,6 +29,7 @@ main {
     align-items: center;
 }
 
+
 /* Contenedor del Formulario */
 .form-container {
     display: flex;
@@ -264,7 +265,9 @@ footer p {
     header h1 {
         font-size: 1.2em;
     }
-
+    html, body {
+        background-size: cover; /* Mantener la imagen cubriendo todo */
+    }
     .icono img {
         height: 35px;
         /* Ajusta el tamaño del ícono */
@@ -281,6 +284,9 @@ footer p {
      .form-container, .containerForm {
         margin-bottom: 0; /* Elimina margen inferior */
         padding-bottom: 0; /* Elimina padding inferior */
+    }
+    .form-container p {
+        margin-bottom: 20px; /* Añade espacio debajo de la etiqueta <p> */
     }
 
     /* Ajustar espacio entre el formulario y el footer */
