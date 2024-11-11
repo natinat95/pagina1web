@@ -8,9 +8,6 @@
 body,
 html {
     height: 100%;
-    /* Para que la página ocupe toda la altura */
-    display: flex;
-    flex-direction: column;
     font-family: 'Roboto', sans-serif;
     color: #000000;
     background-color: #000000;
@@ -18,28 +15,34 @@ html {
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
+    background-attachment: fixed;
+    display: flex;
+    flex-direction: column;
 }
 
 /* Contenedor principal */
 main {
-    flex-grow: 1;
-    /* Para que el contenido principal ocupe el espacio restante */
     display: flex;
     flex-direction: column;
-    align-items: center;
+    justify-content:center; 
+    align-items: center; /* Centra el formulario horizontalmente */
+    min-height: 100vh; /* Asegura que el contenedor ocupe toda la altura de la pantalla */
+    padding: 20px;
+    width: 100%;
 }
-
 
 /* Contenedor del Formulario */
 .form-container {
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: center; 
     align-items: center;
-    min-height: 80vh;
-    margin-top: auto;
     padding: 20px;
     width: 100%;
+    max-width: 400px; /* Limita el ancho máximo del formulario */
+    margin: 0 auto; /* Asegura que el formulario se centre horizontalmente */
+    margin-top: auto;
+    margin-bottom: auto;
 }
 
 /* Header para Login y Registro */
@@ -293,4 +296,5 @@ footer p {
     footer {
         margin-top: 0px; /* Ajusta el margen superior del footer */
     }
+
 }
