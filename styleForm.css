@@ -22,27 +22,25 @@ html {
 
 /* Contenedor principal */
 main {
+    flex: 1;
     display: flex;
     flex-direction: column;
-    justify-content:center; 
-    align-items: center; /* Centra el formulario horizontalmente */
-    min-height: 100vh; /* Asegura que el contenedor ocupe toda la altura de la pantalla */
+    align-items: center;
+    justify-content: center;
     padding: 20px;
     width: 100%;
 }
+
 
 /* Contenedor del Formulario */
 .form-container {
     display: flex;
     flex-direction: column;
-    justify-content: center; 
+    justify-content: center;
     align-items: center;
+    margin-top: auto;
     padding: 20px;
     width: 100%;
-    max-width: 400px; /* Limita el ancho máximo del formulario */
-    margin: 0 auto; /* Asegura que el formulario se centre horizontalmente */
-    margin-top: auto;
-    margin-bottom: auto;
 }
 
 /* Header para Login y Registro */
@@ -254,13 +252,16 @@ footer p {
 
     .form-container {
         padding: 10px;
+        margin-top: 20px; /* Añadir margen superior para separar el formulario */
+        margin-bottom: 20px; /* Añadir margen inferior */
     }
 
     .containerForm {
         padding: 15px;
     }
+
     footer {
-        margin-top: 0px;
+        margin-top: 30px; /* Añadir más espacio entre el formulario y el footer */
     }
 }
 
@@ -268,12 +269,13 @@ footer p {
     header h1 {
         font-size: 1.2em;
     }
+
     html, body {
         background-size: cover; /* Mantener la imagen cubriendo todo */
     }
+
     .icono img {
         height: 35px;
-        /* Ajusta el tamaño del ícono */
     }
 
     .registerbtn {
@@ -283,18 +285,28 @@ footer p {
     .social-icons a {
         font-size: 1.2em;
     }
-     /* Eliminar márgenes adicionales */
-     .form-container, .containerForm {
-        margin-bottom: 0; /* Elimina margen inferior */
+
+    /* Eliminar márgenes adicionales */
+    .form-container {
+        margin-top: 20px; /* Añadir margen superior */
+        margin-bottom: 20px; /* Añadir margen inferior */
         padding-bottom: 0; /* Elimina padding inferior */
+        padding-left: 15px;
+        padding-right: 15px;
+        width: 90%; /* Limitar el ancho del formulario */
     }
-    .form-container p {
-        margin-bottom: 20px; /* Añade espacio debajo de la etiqueta <p> */
+
+    .containerForm {
+        margin-top: 10px; /* Añadir margen superior */
+        padding: 15px;
     }
 
     /* Ajustar espacio entre el formulario y el footer */
     footer {
-        margin-top: 0px; /* Ajusta el margen superior del footer */
+        margin-top: 40px; /* Añadir margen superior al footer */
     }
 
+    .form-container p {
+        margin-bottom: 20px; /* Añadir espacio debajo de la etiqueta <p> */
+    }
 }
