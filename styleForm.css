@@ -22,29 +22,29 @@ html {
 
 /* Contenedor principal */
 main {
-    flex: 1;
     display: flex;
     flex-direction: column;
+    justify-content: center;  /* Asegura que el contenido comienza desde arriba */
     align-items: center;
-    justify-content: center;
     padding: 20px;
     width: 100%;
-    height: 100%;
+    height: 100%;  /* Asegura que ocupa toda la altura de la ventana */
+    flex-grow: 1;  /* Hace que el contenedor principal ocupe el espacio restante */
 }
 
 
 /* Contenedor del Formulario */
 .form-container {
-    display: flex;
+   display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    margin-top: auto;
     padding: 20px;
     width: 100%;
     max-width: 400px; /* Limita el ancho máximo del formulario */
     margin-left: auto; /* Centrado automático */
     margin-right: auto; /* Centrado automático */
+    margin-bottom: 20px; /* Asegura que el formulario no se pegue al footer */
 
 }
 
@@ -261,10 +261,7 @@ footer p {
         margin-top: 20px; /* Espacio superior para evitar que el formulario se pegue al borde */
         margin-bottom: 20px; /* Espacio inferior para evitar que se pegue al footer */
     }
-  .form-container {
-        max-width: 100%;
-        padding: 20px;
-    }
+
 
     .containerForm {
         padding: 10px;
@@ -297,8 +294,6 @@ footer p {
     }
 
       .form-container {
-        max-width: 100%;
-        padding: 15px;
         margin-top: 20px;
         margin-bottom: 20px;
     }
