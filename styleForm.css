@@ -257,13 +257,17 @@ footer p {
     .icono img {
         height: 45px;
     }
-
-    .form-container {
-        padding: 10px;
+.form-container {
+        margin-top: 20px; /* Espacio superior para evitar que el formulario se pegue al borde */
+        margin-bottom: 20px; /* Espacio inferior para evitar que se pegue al footer */
+    }
+  .form-container {
+        max-width: 100%;
+        padding: 20px;
     }
 
     .containerForm {
-        padding: 15px;
+        padding: 10px;
     }
 
     footer {
@@ -292,9 +296,11 @@ footer p {
         font-size: 1.2em;
     }
 
-    .form-container, .containerForm {
-        margin-bottom: 0;
-        padding-bottom: 0;
+      .form-container {
+        max-width: 100%;
+        padding: 15px;
+        margin-top: 20px;
+        margin-bottom: 20px;
     }
 
     .form-container p {
@@ -302,6 +308,6 @@ footer p {
     }
 
     footer {
-        margin-top: 0px;
+        margin-top: 20px;
     }
 }
