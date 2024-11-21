@@ -21,29 +21,57 @@
                 <a href="index.html"><img src="img/cascos2.jpeg" alt="Logo del sitio de videos de música"></a>
             </div>
     </header>
-
     <main>
-        <section class="gallery">
-            <div class="photo">
-                <img src="img/dann.jpg" alt="Descripción de la foto 1">
-            </div>
-            <div class="photo">
-                <img src="img/fondo.jpg" alt="Descripción de la foto 2">
-            </div>
-            <div class="photo">
-                <img src="img/fondo3.jpeg" alt="Descripción de la foto 3">
-            </div>
-            <div class="photo">
-                <img src="img/imagen4.jpg" alt="Descripción de la foto 3">
-            </div>
-            <div class="photo">
-                <img src="img/imagen2.jpg" alt="Descripción de la foto 3">
-            </div>
-            <div class="photo">
-                <img src="img/imagen3.jpg" alt="Descripción de la foto 3">
-            </div>
 
-        </section>
+        <div class="slideshow-container">
+
+                <div class="mySlides fade">
+                    <img src="img/trans2.jpg" style="width:100%">
+                    <div class="text-container">
+                    </div>
+                </div>
+
+            <div class="mySlides fade">
+              <img src="img/dann.jpg" style="width:100%">
+              <div class="text-container">
+              </div>
+            </div>
+          
+      
+            <div class="mySlides fade">
+              <img src="img/fondo.jpg" style="width:100%">
+              <div class="text-container">
+              </div>
+            </div>
+          
+        
+            <div class="mySlides fade">
+              <img src="img/fondo3.jpeg" style="width:100%">
+              <div class="text-container">
+              </div>
+            </div>
+            
+               <div class="mySlides fade">
+                <img src="img/imagen2.jpg" style="width:100%">
+                <div class="text-container">
+                </div>
+              </div>
+
+          </div>
+          
+          <!-- Botones circulares para las imágenes -->
+          <div style="text-align:center">
+            <span class="dot" onclick="currentSlide(1)"></span>
+            <span class="dot" onclick="currentSlide(2)"></span>
+            <span class="dot" onclick="currentSlide(3)"></span>
+            <span class="dot" onclick="currentSlide(4)"></span>
+            <span class="dot" onclick="currentSlide(5)"></span>
+          </div>
+          
+          <!-- Botones de navegación -->
+          <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+          <a class="next" onclick="plusSlides(1)">&#10095;</a>
+
     </main>
 
     <footer>
@@ -57,7 +85,7 @@
         <p>&copy; 2024 Página de Videos de Música. Todos los derechos reservados.</p>
     </footer>
     </div>
-
+    <script type="" src="galeria.js"></script>
 </body>
 
 </html>

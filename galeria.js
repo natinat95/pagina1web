@@ -1,16 +1,41 @@
-// script.js
-let index = 0;
-const images = document.querySelectorAll('.slider-item');
-const totalImages = images.length;
+let slideIndex = 1;
 
-function showNextImage() {
-    index++;
-    if (index >= totalImages) {
-        index = 0; // Reset to the first image
-    }
-    const newTransformValue = -index * 100; // Desplazar hacia la izquierda por el ancho total de una imagen
-    document.querySelector('.slider-container').style.transform = `translateX(${newTransformValue}%)`;
+// Mostrar diapositiva actual
+function showSlides(n) {
+  let slides = document.getElementsByClassName("mySlides");
+  let dots = document.getElementsByClassName("dot");
+
+  // Asegurarse de que la diapositiva no se pase de los límites
+  if (n > slides.length) { slideIndex = 1 }
+  if (n < 1) { slideIndex = slides.length }
+
+  // Ocultar todas las diapositivas
+  for (let i = 0; i < slides.length; i++) {
+    slides[i].style.display = "none";  
+  }
+
+  // Desactivar todos los puntos
+  for (let i = 0; i < dots.length; i++) {
+    dots[i].className = dots[i].className.replace(" active", "");
+  }
+
+  // Mostrar la diapositiva actual
+  slides[slideIndex - 1].style.display = "block";  
+
+  // Activar el punto correspondiente
+  dots[slideIndex - 1].className += " active";
 }
 
-// Cambiar de imagen cada 3 segundos
-setInterval(showNextImage, 3000);
+// Cambiar diapositiva con los botones
+function plusSlides(n) {
+  showSlides(slideIndex += n);
+}
+
+// Ir a una diapositiva específica al hacer clic en los puntos
+function currentSlide(n) {
+  showSlides(slideIndex = n);
+}
+
+// Mostrar la diapositiva inicial
+showSlides(slideIndex);
+

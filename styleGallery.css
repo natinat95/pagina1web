@@ -11,6 +11,12 @@ body {
     padding: 0;
     background-color: #000000; 
     box-sizing: border-box;
+    min-height: 100vh; /* Asegura que el cuerpo ocupe toda la altura de la ventana */
+    display: flex;
+    flex-direction: column; /* Organiza el contenido en una columna */
+}
+.main{
+    flex-grow: 1;
 }
 
 header {
@@ -54,28 +60,72 @@ header .logo img {
     border-radius: 30px;
 }
 
-/* Galería de imágenes */
-.gallery {
-    margin-top: 20px; /* Ajustar a 0 para eliminar el margen superior */
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 20px;
-    justify-items: center;
-    margin-bottom: 20px;
-}
-
-
-.photo {
-    width: 100%; /* Asegura que cada contenedor de foto ocupe el 100% de la columna asignada */
-    overflow: hidden; /* Oculta cualquier contenido que se desborde */
-}
-
-.photo img {
-    width: 100%; /* Las imágenes ocupan el 100% del ancho de su contenedor */
-    height: 100%; /* Las imágenes ocupan el 100% de la altura de su contenedor */
-    object-fit: cover; /* Mantiene la proporción y ajusta la imagen para que ocupe toda la celda */
+/* Estilos generales para el carrusel */
+.slideshow-container {
+    position: relative;
+    max-width: 80%; /* Limita el tamaño máximo del contenedor */
+    margin: 20px auto 0; /* Añadimos margen superior para evitar solapamiento con el header */
+    overflow: hidden; /* Oculta las partes de la imagen que se salen del contenedor */
     border-radius: 20px;
-}
+  }
+  
+  /* Estilo para las imágenes del carrusel */
+  .mySlides img {
+    width: 100%; /* Hace que la imagen ocupe todo el ancho del contenedor */
+    height: 500px; /* Tamaño fijo para la altura de todas las imágenes */
+    object-fit: cover; /* Asegura que la imagen cubra el contenedor sin deformarse */
+    border-radius: 20px;
+  }
+  
+  /* Los puntos (dots) de navegación */
+  .dot {
+    height: 15px;
+    width: 15px;
+    margin: 0 2px;
+    background-color: #ffffff7a;
+    border-radius: 50%;
+    display: inline-block;
+    transition: background-color 0.6s ease;
+    cursor: pointer;
+    margin-top: 20px;
+  }
+  
+  .dot:hover {
+    background-color: #717171;
+  }
+  
+  /* Cuando un punto es activo, cambia su color */
+  .active {
+    background-color: #ea210b;
+  }
+  
+  /* Estilos para los botones de navegación */
+  .prev, .next {
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    width: auto;
+    padding: 16px;
+    margin-top: -22px;
+    color: white;
+    font-weight: bold;
+    font-size: 18px;
+    background-color: rgba(0, 0, 0, 0.5);
+    border: none;
+    border-radius: 0 3px 3px 0;
+    user-select: none;
+    z-index: 1000;
+  }
+  
+  .next {
+    right: 0;
+    border-radius: 3px 0 0 3px;
+  }
+  
+  .prev:hover, .next:hover {
+    background-color: rgba(0, 0, 0, 0.8);
+  }
+  
 
 /* Footer */
 footer {
@@ -88,6 +138,7 @@ footer {
     border: 2px solid #ea210b;
     text-align: center;
     border-radius: 15px;
+    margin-top: auto;/* Empuja el footer hacia abajo */
 }
 
 footer .social-icons a {
