@@ -4,7 +4,6 @@ class ProductCard extends HTMLElement {
         const template = document.createElement('template');
         template.innerHTML = `
         <style>
-        
           /* Estilos específicos de la tarjeta de producto */
           .product-card {
               width: 250px;
@@ -17,11 +16,11 @@ class ProductCard extends HTMLElement {
               display: flex;
               flex-direction: column;
               justify-content: space-between;
-              transition: transform 0.3s ease;
+              transition: transform 0.5s ease;
               box-sizing: border-box;
           }
           .product-card:hover {
-              transform: translateY(-5px);
+              transform: translateY(-10px);
           }
           .product-card img {
               width: 100%;
@@ -58,59 +57,58 @@ class ProductCard extends HTMLElement {
               background-color: #ff5733;
           }
 
-            /* Estilo para el botón de favorito */
-        .favorite-btn {
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            background-color: #ea210b;
-            color: white;
-            border: none;
-            font-size: 14px;
-            padding: 5px 10px;
-            cursor: pointer;
-            transition: background-color 0.3s, color 0.3s;
-            margin-top: 10px;
-            border-radius: 5px;
-            font-family: 'Roboto', sans-serif;
-        }
+          /* Estilo para el botón de favorito */
+          .favorite-btn {
+              display: inline-flex;
+              align-items: center;
+              justify-content: center;
+              background-color: #ea210b;
+              color: white;
+              border: none;
+              font-size: 14px;
+              padding: 5px 10px;
+              cursor: pointer;
+              transition: background-color 0.3s, color 0.3s;
+              margin-top: 10px;
+              border-radius: 5px;
+              font-family: 'Roboto', sans-serif;
+          }
 
-        .favorite-btn:hover {
-            background-color: #ff5733;
-        }
+          .favorite-btn:hover {
+              background-color: #ff5733;
+          }
 
-        .favorite-btn .heart {
-            font-size: 1.5em;
-            margin-left: 8px;
-            transition: color 0.3s ease;
-        }
+          .favorite-btn .heart {
+              font-size: 1.5em;
+              margin-left: 8px;
+              transition: color 0.3s ease;
+          }
 
-        .favorite-btn.liked {
-            background-color: #ff5733; /* Fondo cuando es favorito */
-            color: white; /* Color de texto */
-        }
+          .favorite-btn.liked {
+              background-color: #ff5733; /* Fondo cuando es favorito */
+              color: white; /* Color de texto */
+          }
 
-        .favorite-btn.liked .heart {
-            color: black; /* Rojo cuando es favorito */
-        }
-                </style>
+          .favorite-btn.liked .heart {
+              color: black; /* Rojo cuando es favorito */
+          }
+        </style>
 
-                <div class="product-card">
-                    <slot name="image">
-                        <img src="" alt="Imagen del producto">
-                    </slot>
-                    <h3><slot name="title">Producto</slot></h3>
-                    <p><slot name="description">Descripción del producto</slot></p>
-                    <p class="price"><slot name="price">$0.00</slot></p>
-                    <button class="btn">Agregar al carrito</button>
-                    <!-- Botón de favorito con Font Awesome -->
-                    <button class="btn favorite-btn">
-                        Favorito
-                        <i class="heart fas fa-heart"></i> <!-- Ícono de corazón -->
-                    </button>
-                </div>
-            `;
-
+        <div class="product-card">
+            <slot name="image">
+                <img src="" alt="Imagen del producto">
+            </slot>
+            <h3><slot name="title">Producto</slot></h3>
+            <p><slot name="description">Descripción del producto</slot></p>
+            <p class="price"><slot name="price">$0.00</slot></p>
+            <button class="btn">Agregar al carrito</button>
+            <!-- Botón de favorito con Font Awesome -->
+            <button class="btn favorite-btn">
+                Favorito
+                <i class="heart fas fa-heart"></i> <!-- Ícono de corazón -->
+            </button>
+        </div>
+      `;
 
         const shadowRoot = this.attachShadow({ mode: 'open' });
         shadowRoot.appendChild(template.content.cloneNode(true));

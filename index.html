@@ -2,56 +2,71 @@
 <html lang="es">
 
 <head>
+    <!-- Definir la codificación de caracteres a UTF-8 -->
     <meta charset="UTF-8">
+    
+    <!-- Hacer que la página sea responsiva ajustándose al tamaño de pantalla del dispositivo -->
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    
+    <!-- Garantizar compatibilidad con Internet Explorer -->
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    
+    <!-- Descripción de la página web para motores de búsqueda y previsualizaciones -->
     <meta name="description" content="Página de videos de música">
+    
+    <!-- Información del autor para la página -->
     <meta name="author" content="Tu Nombre">
+    
+    <!-- Palabras clave para mejorar la búsqueda del sitio -->
     <meta name="keywords" content="música, videos, artistas, álbumes">
 
+    <!-- Título de la página que aparecerá en la pestaña del navegador -->
     <title>Dani Fernández by Natalia</title>
 
-    <!-- Google Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Open+Sans:wght@300;600&display=swap"
-        rel="stylesheet">
+    <!-- Vincular Google Fonts para las fuentes de la página -->
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Open+Sans:wght@300;600&display=swap" rel="stylesheet">
 
-    <!-- Font Awesome -->
+    <!-- Vincular Font Awesome para los íconos (como los de redes sociales) -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
 
-
-    <!-- Normalize CSS -->
+    <!-- Vincular Normalize CSS para un estilo base consistente entre navegadores -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css">
 
-    <!-- Estilos CSS propios -->
+    <!-- Vincular tu archivo CSS propio con los estilos personalizados -->
     <link rel="stylesheet" href="style.css">
-   
 </head>
 
 <body>
 
+    <!-- Contenedor principal de la página -->
     <div class="container">
 
-        <!-- Header -->
-        <header>
-            
+        <!-- Encabezado de la página -->
+        <header id="header">
+            <!-- Logo del sitio que redirige al inicio de sesión -->
             <div class="logo">
                 <a href="login.html">
                     <img src="img/sesion5.png" alt="Icono iniciar sesión">
                 </a>
             </div>
+            
+            <!-- Logo del sitio que redirige a la página principal -->
             <div class="icono">
                 <a href="index.html">
                     <img src="img/cascos2.jpeg" alt="Logo del sitio de videos de música">
                 </a>
             </div>
-            
+
+            <!-- Menú de navegación principal -->
             <nav>
                 <ul class="menu">
                     <li><a href='productos.html'>Entradas</a></li>
                     <li><a href="#video-section">Videos</a></li>
                     <li>
+                        <!-- Menú desplegable -->
                         <a href="#" class="menu"><i class="fas fa-bars"></i></a>
                         <ul class="dropdown">
+                            <li><a href="mapa.html">Ventas</a></li>
                             <li><a href="https://linktr.ee/danifernandezgira">Próximos conciertos</a></li>
                             <li><a href="https://danifernandezoficial.es/">Página oficial</a></li>
                             <li><a href="https://es.wikipedia.org/wiki/Dani_Fern%C3%A1ndez_(cantante)">Biografía</a></li>
@@ -60,32 +75,32 @@
                     </li>
                 </ul>
             </nav>
-
         </header>
-        <!-- Main Content -->
+
+        <!-- Sección principal (hero section) con un slider de imágenes -->
         <main>
             <section class="hero">
+                <!-- Slider de imágenes con transiciones -->
                 <div class="slider">
                     <div class="slide fade active">
                         <img src="img/fondomolon.jpg" alt="Imagen 1">
                     </div>
                     <div class="slide fade">
                         <img src="img/dan.jpg" alt="Imagen 2">
-                        <div class="text">
-                        </div>
+                        <div class="text"></div>
                     </div>
                 </div>
+
+                <!-- Texto de bienvenida en la sección hero -->
                 <div class="text">
                     <h1>DANI FERNÁNDEZ</h1>
                     <p>Disfruta de tu artista favorito</p>
                 </div>
             </section>
-
         </main>
 
-
+        <!-- Galería de videos -->
         <section class="video-gallery" id="video-section">
-
             <div class="video">
                 <img src="img/dani.jpg" alt="Me has invitado a bailar">
                 <h2>Me has invitado a bailar</h2>
@@ -117,28 +132,28 @@
                 <a href="https://www.youtube.com/watch?v=WvFPU8RHSmc" class="btn">Ver Video</a>
             </div>
         </section>
-        </main>
 
-        <!-- Footer -->
+        <!-- Pie de página -->
         <footer>
             <div class="social-icons">
-                <a href="https://www.instagram.com/danifdezmusic/?hl=es" target="_blank"><i
-                        class="fab fa-instagram"></i></a>
-                <a href="https://www.youtube.com/channel/UCqV5TK3U78gh65XmJMsqP_Q" target="_blank"><i
-                        class="fab fa-youtube"></i></a>
-                        <a href="https://www.tiktok.com/@danifdezmusic?lang=es" target="_blank"><i class="fa-brands fa-tiktok"></i></a>
-                    </div>
+                <!-- Íconos de redes sociales -->
+                <a href="https://www.instagram.com/danifdezmusic/?hl=es" target="_blank"><i class="fab fa-instagram"></i></a>
+                <a href="https://www.youtube.com/channel/UCqV5TK3U78gh65XmJMsqP_Q" target="_blank"><i class="fab fa-youtube"></i></a>
+                <a href="https://www.tiktok.com/@danifdezmusic?lang=es" target="_blank"><i class="fa-brands fa-tiktok"></i></a>
+            </div>
             <p>&copy; 2024 Página de Videos de Música. Todos los derechos reservados.</p>
         </footer>
 
+        <!-- Diálogo para mostrar el aviso de cookies -->
         <dialog id="cookieDialog">
             <p>Este sitio web utiliza cookies para mejorar tu experiencia de navegación. Al continuar navegando, aceptas nuestro uso de cookies.</p>
             <button id="acceptCookies">Aceptar</button>
         </dialog>
 
-        
-    <script src="productos.js"></script>
-    <script src="cookies.js"></script>
+        <!-- Scripts externos -->
+        <script src="productos.js"></script>
+        <script src="cookies.js"></script>
+    </div>
 </body>
 
 </html>

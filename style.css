@@ -1,119 +1,104 @@
 /* Normalización y estilos básicos */
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+    margin: 0; /* Elimina el margen predeterminado de los elementos */
+    padding: 0; /* Elimina el padding predeterminado de los elementos */
+    box-sizing: border-box; /* Incluye el padding y el borde en el cálculo del ancho y alto de los elementos */
 }
 
+/* Estilo general del cuerpo */
 body {
-    background-color: #000000;
-    color: #ffffff;
-    font-family: 'Roboto', sans-serif;
-    overflow-x: hidden;
-    /* Evita desplazamiento horizontal en cualquier dispositivo */
+    background-color: #000; /* Fondo negro */
+    color: #fff; /* Texto blanco */
+    font-family: 'Roboto', sans-serif; /* Fuente utilizada */
+    overflow-x: hidden; /* Evita el desbordamiento horizontal */
 }
 
-/* Contenedor principal */
-
+/* Contenedor principal que abarca toda la página */
 .container {
-    width: 100%;
-    /* Asegura que el contenedor ocupe todo el ancho */
-    margin: 0 auto;
-    /* Centra el contenedor */
+    width: 100%; /* Ocupa todo el ancho */
+    margin: 0 auto; /* Centra el contenido horizontalmente */
     display: flex;
-    /* Usar flexbox */
-    flex-direction: column;
-    /* Alinear elementos en columna */
-    min-height: 100vh;
-
+    flex-direction: column; /* Coloca los elementos de forma vertical */
+    min-height: 100vh; /* Asegura que el contenedor tenga al menos la altura de la ventana */
 }
 
-/* Header */
-
+/* Estilos para el encabezado */
 header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    background-color: #000;
-    height: 70px;
+    display: flex; /* Disposición en fila */
+    justify-content: space-between; /* Espacio entre los elementos */
+    align-items: center; /* Alinea verticalmente */
+    background-color: #000; /* Fondo negro */
+    height: 70px; /* Altura fija */
     padding: 10px;
-    position: fixed;
+    position: fixed; /* Fija el header en la parte superior */
     top: 0;
     left: 0;
     right: 0;
-    z-index: 1000;
+    z-index: 1000; /* Asegura que el header esté por encima de otros elementos */
     border-radius: 15px;
-    border: 2px solid #ea210b;
-   
+    border: 2px solid #ea210b; /* Borde rojo */
 }
 
-/* Estilos para el icono */
+/* Estilo del icono en el header */
 .icono {
     position: absolute;
     left: 20px;
     top: 50%;
-    transform: translateY(-50%);
-    /* Para centrarlo verticalmente */
+    transform: translateY(-50%); /* Centra verticalmente el icono */
 }
 
 .icono img {
-    height: 50px;
+    height: 50px; /* Tamaño del icono */
 }
 
-/* Asegurando que el logo esté a la derecha */
+/* Logo en el header */
+.logo img {
+    height: 35px; /* Tamaño del logo */
+}
+
 header .logo {
-    display: flex;
-    align-items: center;
     position: absolute;
-    right: 20px;
+    right: 20px; /* Ubica el logo a la derecha */
 }
 
-header .logo img {
-    height: 35px;
-    border-radius: 30px;
-}
-
-/* Ajustes para el logo y navegación */
+/* Estilos del menú de navegación */
 header nav {
-    flex-grow: 1;
+    flex-grow: 1; /* El nav crece para ocupar el espacio restante */
 }
 
 header nav ul {
-    list-style: none;
-    display: flex;
-    justify-content: center;
+    list-style: none; /* Elimina los puntos de lista */
+    display: flex; /* Disposición en fila */
+    justify-content: center; /* Centra los elementos */
 }
 
 header nav ul li {
-    margin-left: 20px;
+    margin-left: 20px; /* Espacio entre los elementos del menú */
     position: relative;
 }
 
 header nav ul li a {
-    color: #ffffff;
-    text-decoration: none;
-    font-weight: 700;
+    color: #ffffff; /* Color blanco para los enlaces */
+    text-decoration: none; /* Elimina el subrayado */
+    font-weight: 700; /* Negrita */
     padding: 10px;
-    transition: color 0.3s ease;
+    transition: color 0.3s ease; /* Transición suave para el cambio de color */
 }
 
-
-
 /* Estilos para el menú desplegable */
-
 .dropdown {
-    display: none;
+    display: none; /* Oculta el menú desplegable por defecto */
     position: absolute;
-    top: 100%;
+    top: 100%; /* Aparece debajo del elemento padre */
     left: 0;
     background-color: #000;
     border-radius: 8px;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.5); /* Sombra */
     z-index: 10;
 }
 
 nav ul li:hover .dropdown {
-    display: block;
+    display: block; /* Muestra el menú cuando se pasa el cursor sobre el elemento */
 }
 
 .dropdown li {
@@ -122,238 +107,205 @@ nav ul li:hover .dropdown {
 
 .dropdown a {
     padding: 10px;
-    display: block;
+    display: block; /* Hace que el enlace ocupe toda el área del ítem */
     color: #ffffff;
     text-decoration: none;
 }
 
 /* Cambia el color del texto del menú y del dropdown a rojo cuando pasas el cursor */
 nav ul li a:hover,
-/* Enlaces principales del menú */
 .dropdown a:hover {
-    /* Enlaces del menú desplegable */
-    color: #ea210b;
-    /* Color rojo */
+    color: #ea210b; /* Color rojo */
 }
 
-/* Hero Section */
+/* Estilos para la sección hero */
 .hero {
     position: relative;
-    overflow: hidden; /*para que el slider no se ponga encima de los videos*/
-    height: 80vh;
+    overflow: hidden; /* Evita que el contenido se desborde */
+    height: 80vh; /* Altura del 80% de la ventana */
     border-radius: 15px;
     margin-bottom: 40px;
     margin-top: 60px;
 }
 
+/* Estilos del slider */
 .slider {
     position: relative;
     max-height: 80vh;
 }
 
 .slide {
-    opacity: 0;
+    opacity: 0; /* Inicialmente invisibles */
     position: absolute;
     width: 100%;
     height: 100%;
     top: 0;
     left: 0;
-    transition: opacity 1s ease;
+    transition: opacity 1s ease; /* Transición suave para la opacidad */
 }
 
 .active {
-    opacity: 1;
+    opacity: 1; /* Solo la clase activa será visible */
 }
 
 .slide img {
     width: 100%;
-    object-fit: cover;
+    object-fit: cover; /* Hace que la imagen cubra el área sin distorsionar */
     border-radius: 15px;
 }
 
+/* Animación de desvanecimiento */
 @keyframes fade {
-    0% {
-        opacity: 0;
-    }
-
-    5% {
-        opacity: 1;
-    }
-
-    45% {
-        opacity: 1;
-    }
-
-    50% {
-        opacity: 0;
-    }
-
-    100% {
-        opacity: 0;
-    }
+    0%, 50%, 100% { opacity: 0; }
+    5%, 45% { opacity: 1; }
 }
 
-.slider .slide{
+/* Aplicación de la animación al slider */
+.slider .slide {
     animation: fade 10s infinite;
 }
 
 .slider .slide:nth-child(2) {
-    animation: fade 10s infinite 5s;
+    animation: fade 10s infinite 5s; /* Diferencia la animación de la segunda imagen */
 }
 
-/* Texto sobre la imagen */
+/* Estilo para el texto sobre el slider */
 .text {
     position: absolute;
     bottom: 20px;
     right: 20px;
-    /*para que el texto este abajo a la derecha*/
-    color: #ffffff;
+    color: #fff;
     z-index: 10;
     text-align: right;
-    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7);
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7); /* Sombra para mejorar la visibilidad */
 }
 
 .text h1 {
     font-size: 2em;
-    /* Tamaño de fuente base */
     margin: 0;
 }
 
 .text p {
-    font-size: 1.em;
-    /* Tamaño de fuente base */
+    font-size: 1em;
 }
 
-/* Video Gallery */
+/* Estilos para la galería de videos */
 .video-gallery {
     display: flex;
-    flex-wrap: wrap;
-    gap: 20px;
+    flex-wrap: wrap; /* Permite que los videos se ajusten a varias líneas */
+    gap: 20px; /* Espacio entre los videos */
     justify-content: center;
-
 }
 
 .video {
-    background-color: rgb(255, 255, 255);
-    width: calc(33.33% - 20px);
-    margin-bottom: 20px; padding: 15px;
-    /* 3 columnas por defecto */
+    background-color: #fff;
+    width: calc(33.33% - 20px); /* Tres videos por fila en pantallas grandes */
+    margin-bottom: 20px;
+    padding: 15px;
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
     text-align: center;
     border-radius: 15px;
-    overflow: hidden;
-    transition: transform 0.3s ease;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: space-between;
+    transition: transform 0.5s; /* Transición para el efecto hover */
 }
 
-
-
 .video:hover {
-    transform: translateY(-8px);
+    transform: translateY(-12px); /* Eleva el video cuando se pasa el cursor */
 }
 
 .video img {
     width: 100%;
     height: auto;
-    min-height: 550px;
-    object-fit: cover;
+    min-height: 550px; /* Altura mínima para las imágenes */
+    object-fit: cover; /* Asegura que las imágenes se ajusten sin deformarse */
     border-radius: 10px;
-    aspect-ratio: 16/9;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    aspect-ratio: 16/9; /* Relación de aspecto de 16:9 */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Sombra alrededor de las imágenes */
 }
 
 .video h2 {
     font-size: 1.5em;
     margin: 20px 0;
-    color: #000000;
-    flex-grow: 1;
+    color: #000;
 }
 
 .video .btn {
     display: inline-block;
-    background-color: #ea210b;
+    background-color: #ea210b; /* Botón rojo */
     color: #fff;
     padding: 10px 20px;
     text-decoration: none;
     border-radius: 5px;
     margin-top: 10px;
     font-weight: bold;
-    transition: background-color 0.9s ease;
+    transition: background-color 0.9s; /* Transición para el color del fondo */
 }
 
 .video .btn:hover {
-    background-color: #000000;
+    background-color: #000; /* Fondo negro al pasar el cursor */
 }
 
 /* Estilo del aviso de cookies */
 #cookieDialog {
-        position: fixed;
-        top: 50%; /* Centra verticalmente */
-        left: 50%; /* Centra horizontalmente */
-        transform: translate(-50%, -50%); /* Ajusta el cuadro para que quede perfectamente centrado */
-        max-width: 500px;
-        background: rgba(0, 0, 0, 0.7); /* Fondo oscuro */
-        color: #fff;
-        padding: 20px;
-        border-radius: 8px;
-        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-        z-index: 1000;
-        text-align: center;
-        border: none;
-    }
-    
-    #cookieDialog::backdrop {
-        background-color: rgba(0, 0, 0, 0.5);
-    }
-    
-    #cookieDialog p {
-        margin-bottom: 15px;
-        font-size: 16px;
-    }
-    
-    #acceptCookies {
-        background-color: #ea210b;
-        color: white;
-        border: none;
-        padding: 10px 20px;
-        border-radius: 4px;
-        cursor: pointer;
-        font-family: 'Bebas Neue', sans-serif;
-        font-size: 18px;
-    }
-    
-    #acceptCookies:hover {
-        background-color: black;
-    }
-    #acceptCookies {
-        outline: none;
-    } 
+    position: fixed;
+    top: 50%; /* Centra verticalmente */
+    left: 50%; /* Centra horizontalmente */
+    transform: translate(-50%, -50%); /* Ajusta el cuadro para que quede perfectamente centrado */
+    max-width: 500px;
+    background: rgba(0, 0, 0, 0.7); /* Fondo oscuro */
+    color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+    text-align: center;
+    border: none;
+}
 
+#cookieDialog::backdrop {
+    background-color: rgba(0, 0, 0, 0.5);
+}
 
-/* Footer */
+#cookieDialog p {
+    margin-bottom: 15px;
+    font-size: 15px;
+}
+
+#acceptCookies {
+    background-color: #ea210b;
+    color: white;
+    border: none;
+    padding: 5px 15px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 15px;
+}
+
+#acceptCookies:hover {
+    background-color: black;
+}
+#acceptCookies {
+    outline: none;
+} 
+
+/* FOOTER */
+
 footer {
-    background-color: #000000;
-    color: #ffffff;
+    background-color: #000;
+    color: #fff;
     padding: 10px;
     text-align: center;
     border-radius: 15px;
     box-shadow: 0 -4px 10px rgba(0, 0, 0, 0.5);
     border: 2px solid #ea210b;
-    box-sizing: border-box;
-    /* Incluye el padding y el borde en el cálculo del ancho */
     margin-top: auto;
-    /* Asegura que el footer se coloque al final de la página */
-
 }
 
 footer .social-icons a {
-    color: #ffffff;
+    color: #fff;
     margin: 0 10px;
     font-size: 1.5em;
-    transition: color 0.3s ease;
+    transition: color 0.3s;
 }
 
 footer .social-icons a:hover {
@@ -364,315 +316,32 @@ footer p {
     margin-top: 10px;
     font-size: 0.9em;
 }
-
-/* Media Queries */
-
-@media (min-width: 2000px) {
-    .container {
-        padding: 0 20px;
-        /* Añade espacio lateral en pantallas ultra grandes */
-    }
+@media (max-width: 1024px) {
+    .video { width: calc(50% - 20px); }
+    .text { font-size: 1.1em; }
+    .text h1 { font-size: 2em; }
+    .hero { height: 70vh; }
+    .slide img { width: 100vw; height: 100vh; object-fit: cover; object-position: center; }
+    #cookieDialog { width: 80%; max-width: 450px; }
+    #acceptCookies { font-size: 16px; padding: 8px 16px; }
 }
-
-/* Media Queries */
 @media (max-width: 992px) {
-    .video {
-        width: calc(50% - 20px);
-        /* 2 columnas en pantallas medianas */
-    }
+    .video { width: calc(50% - 20px); }
 }
 
-/* Media query para dispositivos medianos (hasta 768px de ancho) */
 @media (max-width: 768px) {
-    .container {
-        padding: 0 15px;
-    }
-
-    .text {
-        bottom: 10px;
-        /* Ajusta la distancia del borde inferior */
-        right: 10px;
-        /* Ajusta la distancia del borde derecho */
-        font-size: 0.9em;
-    }
-
-    .text h1 {
-        font-size: 1.8em;
-        /* Reducir tamaño del título en pantallas más pequeñas */
-    }
-
-    .text p {
-        font-size: 1em;
-        /* Tamaño base para párrafo */
-    }
-
-    /* Ajustes para la galería y el hero */
-    .video,
-    .gallery {
-        width: 100%;
-        /* Un video por fila */
-    }
-
-    .hero {
-        height: 60vh;
-        /* Ajustar la altura del hero */
-    }
-
-
-    /* Header ajustes */
-    #main-header {
-        padding: 5px 10px;
-        flex-direction: row;
-        align-items: center;
-        justify-content: center;
-        /* Centrar el header */
-    }
-
-    /* Centrar el menú y reducir el tamaño de fuente */
-    nav ul {
-        display: flex;
-        justify-content: center;
-        /* Mantener el menú centrado */
-        padding-left: 0;
-    }
-
-    header .menu {
-        padding-right: 10px;
-        margin: 0 auto;
-    }
-
-    .menu a {
-        font-size: 0.75em;
-        /* Reducir tamaño del texto en el menú */
-    }
-
-    header h1 {
-        font-size: 1.5em;
-        text-align: center;
-    }
-
-    /* Espaciado entre elementos */
-    header nav ul li {
-        margin: 0 10px;
-    }
-
-
-    .logo,
-    .icono img {
-        width: 50px;
-        /* Mantiene el mismo tamaño que arriba */
-        height: auto;
-    }
-
-    .slide img {
-        width: 100vw;
-        height: 100vh;
-        object-fit: cover;
-        object-position: center;
-        /* Centra la imagen en caso de recorte */
-    }
-    #cookieDialog {
-        width: 80%; /* Asegura que el cuadro de diálogo no ocupe toda la pantalla */
-        max-width: 400px; /* Limita el tamaño en pantallas muy pequeñas */
-        padding: 15px; /* Reducir el espacio interior */
-    }
-
-    #cookieDialog p {
-        font-size: 14px; /* Reducir el tamaño de texto en pantallas pequeñas */
-    }
-
-    #acceptCookies {
-        font-size: 16px; /* Reducir tamaño del texto en el botón */
-        padding: 8px 16px; /* Reducir el padding del botón */
-    }
+    .container { padding: 0 15px; }
+    .text { bottom: 10px; right: 10px; font-size: 0.9em; }
+    .text h1 { font-size: 1.8em; }
+    .hero { height: 60vh; }
+    .video, .gallery { width: 100%; }
+    .slide img {width: 100vw; height: 100vh; object-fit: cover; object-position: center; }
+    #cookieDialog { width: 80%; max-width: 400px; }
+    #acceptCookies { font-size: 16px; padding: 8px 16px; }
 }
 
-
-
-/* Media query para dispositivos pequeños (hasta 480px de ancho) */
 @media (max-width: 480px) {
-    #main-header {
-        padding: 5px;
-        flex-wrap: nowrap;
-        justify-content: center;
-        /* Mantener el menú y header centrado */
-        width: 100%;
-        align-items: center;
-    }
-
-    .text {
-        bottom: 10px;
-        /* Ajusta la distancia del borde inferior */
-        right: 10px;
-        /* Ajusta la distancia del borde derecho */
-        font-size: 0.9em;
-    }
-
-    .text h1 {
-        font-size: 1.5em;
-        /* Título más pequeño en pantallas extra pequeñas */
-    }
-
-    .text p {
-        font-size: 0.9em;
-        /* Párrafo un poco más pequeño */
-    }
-
-    .logo {
-        margin-right: 10px;
-        display: flex;
-        align-items: center;
-        flex-grow: 0;
-        flex-shrink: 0;
-        width: auto;
-        max-height: 35px;
-        /* Limita la altura máxima para mantener la proporción */
-    }
-
-    .icono {
-        /*no se si es necesario*/
-        display: flex;
-        align-items: center;
-    }
-
-    .logo img,
-    .icono img {
-        height: 35px;
-        /* Mantiene el mismo tamaño tanto para el logo como para el icono */
-        width: auto;
-        /* Deja que el ancho se ajuste proporcionalmente */
-    }
-
-    /* Mantener el menú en el centro */
-    .menu {
-        display: flex;
-        justify-content: center;
-        /* Centrar el menú */
-        flex-wrap: nowrap;
-    }
-
-    nav ul {
-        flex-direction: row;
-        align-items: center;
-        padding: 0;
-        margin: 0;
-    }
-
-    nav ul li {
-        margin: 0 5px;
-    }
-
-    header h1 {
-
-        width: 100%;
-        text-align: center;
-    }
-
-    .slide img {
-        width: 100vw;
-        height: 100vh;
-        object-fit: cover;
-        object-position: center;
-        /* Centra la imagen en caso de recorte */
-    }
-    #cookieDialog {
-        width: 90%; /* Asegura que el cuadro no ocupe todo el ancho de la pantalla */
-        padding: 12px; /* Más espacio interior reducido */
-    }
-
-    #cookieDialog p {
-        font-size: 12px; /* Texto más pequeño */
-    }
-
-    #acceptCookies {
-        font-size: 14px; /* Reducir aún más el tamaño del botón */
-        padding: 6px 12px; /* Más pequeño el botón */
-    }
-}
-
-
-@media (max-width: 320px) {
-
-    .video h2,
-    .form-header {
-        font-size: 14.4px;
-        /* Aproximado de 0.9em */
-    }
-
-    .slide img {
-        width: 100vw;
-        height: 100vh;
-        object-fit: cover;
-        object-position: center;
-        /* Centra la imagen en caso de recorte */
-    }
-
-    .social-icons i {
-        font-size: 1em;
-        margin: 0 5px;
-    }
-
-    .registerbtn {
-        padding: 10px;
-        font-size: 0.8em;
-        /* Aproximado de 0.8em */
-    }
-
-    .logo {
-        margin-right: auto;
-        /* Asegura que el logo se mantenga a la izquierda */
-    }
-
-    .form-container {
-        padding: 5px;
-    }
-
-    .form-group {
-        flex-direction: column;
-        align-items: flex-start;
-    }
-
-    header {
-        display: flex;
-        /* Asegúrate de que el header use flexbox */
-        flex-direction: row;
-        /* Mantener la dirección en fila */
-        justify-content: center;
-        /* Mantiene el espacio entre los elementos */
-        align-items: center;
-        /* Alinea los elementos verticalmente al centro */
-    }
-
-
-    .menu {
-        flex-wrap: nowrap;
-        /* Mantener el menú en una sola línea */
-        justify-content: center;
-        /* Centrar el menú horizontalmente */
-    }
-
-    header nav ul {
-        flex-direction: row;
-        /* Asegúrate de que el menú esté en fila */
-        align-items: center;
-        /* Alinear los elementos del menú al centro */
-    }
-
-    header nav ul li {
-        margin: 0 10px;
-        /* Espaciado más pequeño entre los elementos */
-    }
-
-    .text {
-        font-size: 1.2em;
-        /* Reduce aún más el tamaño del texto */
-        bottom: 10px;
-        /* Ajusta la distancia del borde inferior */
-        right: 10px;
-        /* Ajusta la distancia del borde derecho */
-        font-size: 0.9em;
-
-
-    }
-
+    #main-header { padding: 5px; flex-wrap: nowrap; justify-content: center; }
+    .text { font-size: 0.9em; }
+    .text h1 { font-size: 1.2em; }
 }

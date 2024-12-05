@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Mapa Interactivo y Gráficas</title>
+    <!-- Leaflet CSS -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+
+    <!-- Chart.js -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+
+    <style>
+        * {
+            margin: 0;
+            /* Quita el margen predeterminado de todos los elementos */
+            padding: 0;
+            /* Quita el padding predeterminado de todos los elementos */
+            box-sizing: border-box;
+            /* Asegura que el ancho y alto incluyan bordes y paddings */
+        }
+
+        body,
+        html {
+            height: 100%;
+            margin: 0;
+            font-family: 'Roboto', sans-serif;
+            background-color: #000;
+            color: #fff;
+        }
+
+        /* Header */
+        header {
+            top: 0;
+            /* Posiciona el header al inicio del eje vertical */
+            left: 0;
+            /* Alinea el header al borde izquierdo */
+            width: 100%;
+            /* Ocupa todo el ancho de la pantalla */
+            height: 70px;
+            /* Define una altura fija */
+            display: flex;
+            /* Usa Flexbox para organizar el contenido */
+            justify-content: center;
+            /* Centra horizontalmente los elementos */
+            align-items: center;
+            /* Centra verticalmente los elementos */
+            background-color: #000000;
+            /* Fondo negro */
+            color: #ffffff;
+            /* Texto blanco */
+            padding: 10px;
+            /* Espaciado interno */
+            border-radius: 15px;
+            /* Bordes redondeados */
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+            /* Sombra para dar profundidad */
+            border: 2px solid #ea210b;
+            /* Borde rojo */
+            z-index: 1000;
+            /* Asegura que el header esté por encima de otros elementos */
+            position: relative;
+            /* Permite usar posicionamiento absoluto para los hijos */
+        }
+
+        /* Icono del header */
+        .icono {
+            position: absolute;
+            /* Posiciona el icono de manera independiente del flujo normal */
+            left: 20px;
+            /* Lo coloca a 20px del borde izquierdo */
+        }
+
+        /* Estilo de la imagen del icono */
+        .icono img {
+            height: 50px;
+            /* Define una altura fija para la imagen */
+            border-radius: 50%;
+            /* Hace que la imagen sea circular */
+        }
+
+        /* Usamos Grid para organizar los elementos , Esto permite dividir la página en dos columnas principales, una para el mapa y otra para las gráficas*/
+        .container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            grid-template-rows: auto;
+            height: calc(100vh - 100px);
+        }
+
+        .map-container {
+            width: 100%;
+            height: 100%;
+            background-color: #000;
+        }
+
+        .chart-container {
+            padding: 20px;
+            background-color: #111;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        canvas {
+            max-width: 90%;
+            height: auto;
+        }
+
+        .leaflet-popup-content {
+            color: #000;
+            background-color: #fff;
+        }
+
+        footer {
+            background-color: #000;
+            color: #fff;
+            padding: 10px;
+            text-align: center;
+            border-radius: 15px;
+            box-shadow: 0 -4px 10px rgba(0, 0, 0, 0.5);
+            border: 2px solid #ea210b;
+            margin-top: auto;
+        }
+
+        footer .social-icons a {
+            color: #fff;
+            margin: 0 10px;
+            font-size: 1.5em;
+            transition: color 0.3s;
+        }
+
+        footer .social-icons a:hover {
+            color: #ea210b;
+        }
+
+        footer p {
+            margin-top: 10px;
+            font-size: 0.9em;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Cabecera de la página -->
+    <header>
+        <div class="cabecera">
+            <h1>Ventas en la Región de Murcia</h1> <!-- Título principal de la página -->
+        </div>
+        <div class="icono">
+            <!-- Logo que enlaza a la página principal -->
+            <a href="index.html"><img src="img/cascos2.jpeg" alt="Logo del sitio de videos de música"></a>
+        </div>
+    </header>
+
+    <div class="container">
+        <!-- Mapa interactivo -->
+        <div class="map-container" id="mapid"></div>
+
+        <!-- Gráficas -->
+        <div class="chart-container">
+            <canvas id="myChart"></canvas>
+        </div>
+
+    </div>
+
+    <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+    <script>
+        var map = L.map('mapid').setView([37.9838, -1.1296], 13);
+
+        L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+            attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+        }).addTo(map);
+
+        var marker = L.marker([37.9838, -1.1296]).addTo(map);
+
+        marker.bindPopup("<b>Murcia</b><br />Bienvenido a la ciudad de Murcia!")
+            .openPopup();
+
+        var ctx = document.getElementById('myChart').getContext('2d');
+        var myChart = new Chart(ctx, {
+            type: 'bar',
+            data: {
+                labels: ['Enero', 'Febrero', 'Marzo', 'Abril', 'Mayo', 'Junio'],
+                datasets: [{
+                    label: 'Ventas de música',
+                    data: [100, 200, 150, 300, 250, 400],
+                    backgroundColor: '#ea210b',
+                    borderColor: 'rgba(234, 33, 11, 1)',
+                    borderWidth: 1
+                }]
+            },
+            options: {
+                responsive: true,
+                scales: {
+                    y: {
+                        beginAtZero: true,
+                        ticks: {
+                            color: '#fff'
+                        }
+                    },
+                    x: {
+                        ticks: {
+                            color: '#fff'
+                        }
+                    }
+                }
+            }
+        });
+    </script>
+    <footer>
+        <div class="social-icons">
+            <a href="https://www.instagram.com/danifdezmusic/?hl=es" target="_blank"><i
+                    class="fab fa-instagram"></i></a> <!-- Enlace a Instagram -->
+            <a href="https://www.youtube.com/channel/UCqV5TK3U78gh65XmJMsqP_Q" target="_blank"><i
+                    class="fab fa-youtube"></i></a> <!-- Enlace a YouTube -->
+            <a href="https://www.tiktok.com/@danifdezmusic?lang=es" target="_blank"><i
+                    class="fa-brands fa-tiktok"></i></a> <!-- Enlace a TikTok -->
+        </div>
+
+        <p>&copy; 2024 Página de Videos de Música. Todos los derechos reservados.</p>
+    </footer>
+</body>
+
+</html>
