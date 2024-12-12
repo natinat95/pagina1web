@@ -43,41 +43,35 @@
 
     <!-- Contenido principal -->
     <main>
-      <div class="productos"> <!-- Contenedor para las tarjetas de productos -->
-
-        <!-- Tarjeta de producto: Cada tarjeta utiliza un componente personalizado "product-card" -->
-        <product-card>
-          <!-- Imagen del producto -->
-          <img slot="image" src="img/alvaro.jpg" alt="Concierto 2">
-          <!-- Título del producto -->
-          <h3 slot="title">8 enero</h3>
-          <!-- Descripción del producto -->
-          <p slot="description">Madrid</p>
-          <!-- Precio del producto -->
-          <p slot="price">29€</p>
-        </product-card>
-
-        <product-card>
-          <img slot="image" src="img/dani2.jpg" alt="Concierto 3">
-          <h3 slot="title">20 enero</h3>
-          <p slot="description">Bilbao</p>
-          <p slot="price">35€</p>
-        </product-card>
-
-        <product-card>
-          <img slot="image" src="img/dudas.jpg" alt="Concierto 4">
-          <h3 slot="title">8 febrero</h3>
-          <p slot="description">Murcia</p>
-          <p slot="price">42€</p>
-        </product-card>
-
-        <product-card>
-          <img slot="image" src="img/criminal.jpg" alt="Concierto 5">
-          <h3 slot="title">4 marzo</h3>
-          <p slot="description">Alicante</p>
-          <p slot="price">50€</p>
-        </product-card>
+          <!-- Template para la tarjeta de producto -->
+    <template id="product-card-template">
+      <div class="product-card">
+          <div class="product-image">
+              <img src="" alt="Imagen del producto" slot="image">
+          </div>
+          <div class="product-info">
+              <h3>
+                  <slot name="title">Título del producto</slot>
+              </h3>
+              <p>
+                  <slot name="description">Descripción del producto</slot>
+              </p>
+              <p><span class="price">
+                      <slot name="price">Precio</slot>
+                  </span></p>
+              <div class="buttons">
+                  <button class="like-button">
+                      Favorito
+                      <i class="heart fas fa-heart"></i> <!-- Ícono de corazón -->
+                  </button>
+                  <button class="add-to-cart">Añadir al carrito</button>
+              </div>
+          </div>
       </div>
+  </template>
+
+  <!-- Contenedor donde se agregarán las tarjetas -->
+  <div class="productos-container"></div>
     </main>
 
     <!-- Pie de página -->

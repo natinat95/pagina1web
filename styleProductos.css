@@ -7,25 +7,31 @@
 
 /* Estilo global del cuerpo */
 body {
-    font-family: 'Roboto', sans-serif; /* Aplica la fuente 'Roboto' para todo el texto */
-    background-color: #000; /* Establece un fondo negro */
-    color: #fff; /* Texto en color blanco */
-    display: flex; /* Usa Flexbox para organizar el contenido */
-    flex-direction: column; /* Coloca los elementos hijos en columna */
-    justify-content: flex-start; /* Alinea los elementos al inicio del contenedor */
-    align-items: center; /* Centra los elementos horizontalmente */
-    height: 100vh; /* Ocupa toda la altura del viewport */
-    overflow-x: hidden; /* Oculta cualquier contenido que desborde horizontalmente */
+    margin: 0;
+    padding: 0;
+    font-family: 'Roboto', sans-serif;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh; /* Asegura que el cuerpo ocupe toda la altura de la ventana */
 }
-
 /* Contenedor principal */
 .container {
-    display: flex; /* Usa Flexbox para organizar los elementos */
-    flex-direction: column; /* Organiza los elementos en columna */
-    justify-content: flex-start; /* Alinea los hijos al inicio del eje principal */
-    width: 100%; /* Ocupa todo el ancho del contenedor */
-    flex-grow: 1; /* Permite que este contenedor crezca y llene el espacio disponible */
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap; /* Permite que el contenido se ajuste */
+    width: 100%;
+    min-height: 100vh; /* Asegura que se ajuste a la altura de la pantalla */
+    overflow-y: auto; /* Añade desplazamiento si es necesario */
 }
+main {
+    flex-grow: 1; /* Mantiene el main expandible */
+    display: flex;
+    flex-direction: column;
+    overflow-y: auto; /* Permite desplazamiento en caso de contenido grande */
+}
+
+
 
 /* Header */
 header {
@@ -38,12 +44,12 @@ header {
     align-items: center; /* Centra verticalmente los elementos */
     background-color: #000000; /* Fondo negro */
     color: #ffffff; /* Texto blanco */
-    padding: 10px; /* Espaciado interno */
     border-radius: 15px; /* Bordes redondeados */
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5); /* Sombra para dar profundidad */
     border: 2px solid #ea210b; /* Borde rojo */
     z-index: 1000; /* Asegura que el header esté por encima de otros elementos */
     position: relative; /* Permite usar posicionamiento absoluto para los hijos */
+
 }
 
 /* Icono del header */
@@ -59,27 +65,139 @@ header {
 }
 
 /* Contenedor de productos */
-.productos {
-    display: flex; /* Usa Flexbox para organizar los productos */
-    flex-wrap: wrap; /* Permite que los elementos se envuelvan en varias filas */
-    gap: 20px; /* Espaciado entre los productos */
-    justify-content: center; /* Centra los productos horizontalmente */
-    margin-top: 20px; /* Espaciado superior */
-    margin-bottom: 20px; /* Espaciado inferior */
-    width: 100%; /* Ocupa todo el ancho del contenedor */
+.productos-container {
+    display: flex;
+    justify-content: center; /* Centra horizontalmente */
+    align-items: center; /* Centra verticalmente */
+    gap: 20px; /* Espaciado entre las tarjetas */
+    flex-wrap: wrap; /* Permite que las tarjetas se ajusten en nuevas filas si es necesario */
+    margin: 20px auto; /* Margen superior e inferior para separar del header y footer */
+    padding: 20px;
+    max-width: 1200px;
+    width: 100%; /* Asegura que se extienda a lo largo de la ventana */
+    box-sizing: border-box;
+    flex-grow: 1; /* Expande el contenedor para llenar el espacio entre header y footer */
+}
+
+
+/* Estilo para la tarjeta de producto */
+.product-card {
+    width: 250px;
+    min-height: 450px;
+    background-color: #000000b4;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    transition: transform 0.5s ease;
+    box-sizing: border-box;
+}
+
+.product-card:hover {
+    transform: scale(1.05);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15); /* Sombra más profunda al pasar el ratón */
+}
+
+/* Imagen del producto */
+.product-image img {
+    width: 100%;
+    height: 200px; /* Tamaño fijo para la imagen */
+    object-fit: cover;
+    border-radius: 10px; /* Bordes redondeados */
+    margin-bottom: 15px;
+}
+
+/* Información del producto */
+.product-info {
+    padding: 15px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    text-align: center;
+}
+
+/* Título del producto */
+.product-info h3 {
+    font-size: 1.3rem; /* Fuente un poco más grande */
+    font-weight: 600;
+    color: white; /* Un color negro más suave */
+    text-transform: uppercase; /* Mayúsculas para un look más moderno */
+}
+
+/* Descripción del producto */
+.product-info p {
+    font-size: 1rem;
+    color: white; /* Gris suave para la descripción */
+    line-height: 1.4;
+}
+
+/* Precio del producto */
+.product-info .price {
+    font-size: 1.2rem;
+    color: #ea210b;
+    font-weight: bold;
+}
+
+/* Botones de la tarjeta */
+.buttons {
+    display: flex;
+    flex-direction: column; /* Alinea los botones en columna */
+    gap: 12px; /* Espacio más amplio entre botones */
+    padding: 10px;
+}
+
+button {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 30px; /* Bordes redondeados para los botones */
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease; /* Transición adicional */
+}
+
+.like-button {
+    background-color: #ea210b;
+    color: white;
+}
+
+.like-button:hover {
+    background-color: #ff5733;
+    transform: translateY(-2px); /* Efecto de elevación sutil al pasar el ratón */
+}
+
+.add-to-cart {
+    background-color: #ea210b;
+    color: white;
+}
+
+.add-to-cart:hover {
+    background-color: #ff5733;
+    transform: translateY(-2px); /* Efecto de elevación sutil al pasar el ratón */
+}
+
+/* Estilo para el corazón (favorito) */
+.heart {
+    color: white; /* Color del corazón cuando no es favorito */
+    transition: color 0.3s ease;
+}
+
+/* Estilo para el corazón cuando es favorito */
+.heart.favorito {
+    color: black; /* Color del corazón cuando es favorito */
 }
 
 /* Footer */
 footer {
-    width: 100%; /* Ocupa todo el ancho de la pantalla */
-    background-color: #000000; /* Fondo negro */
-    color: #ffffff; /* Texto blanco */
-    padding: 10px; /* Espaciado interno */
-    text-align: center; /* Centra el texto */
-    border-radius: 15px; /* Bordes redondeados */
-    box-shadow: 0 -4px 10px rgba(0, 0, 0, 0.5); /* Sombra en la parte superior */
-    border: 2px solid #ea210b; /* Borde rojo */
-    margin-top: auto; /* Empuja el footer hacia la parte inferior si hay espacio */
+    background-color: #000;
+    color: #fff;
+    padding: 10px;
+    text-align: center;
+    border-radius: 15px;
+    box-shadow: 0 -4px 10px rgba(0, 0, 0, 0.5);
+    border: 2px solid #ea210b;
 }
 
 /* Iconos sociales en el footer */
