@@ -19,21 +19,6 @@ html {
     flex-direction: column;
 }
 
-/* Contenedor del Formulario */
-.form-container {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    /* Asegura que el contenido comienza desde arriba */
-    align-items: center;
-    padding: 20px;
-    width: 100%;
-    height: 100%;
-    /* Asegura que ocupa toda la altura de la ventana */
-    flex-grow: 1;
-    /* Hace que el contenedor principal ocupe el espacio restante */
-}
-
 /* Header para Login y Registro */
 header {
     top: 0;
@@ -64,6 +49,20 @@ header {
     border-radius: 50%;
 }
 
+/* Contenedor del Formulario */
+.form-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    /* Asegura que el contenido comienza desde arriba */
+    align-items: center;
+    padding: 20px;
+    width: 100%;
+    height: 100%;
+    /* Asegura que ocupa toda la altura de la ventana */
+    flex-grow: 1;
+    /* Hace que el contenedor principal ocupe el espacio restante */
+}
 /* Formulario contenedor */
 .containerForm {
     width: 100%;
@@ -118,16 +117,18 @@ input:focus {
 }
 
 
-/* Icono para mostrar/ocultar contraseña */
-#viewPassword1,
-#viewPassword2,
-#viewPassword3 {
+/* Botón de contraseña */
+.form-group a {
     position: absolute;
-    right: 12px;
     top: 50%;
+    right: 10px;
     transform: translateY(-50%);
+    color: black;
     cursor: pointer;
-    color: #000000;
+}
+
+.form-group a:hover {
+    color: #ea210b;
 }
 
 
@@ -149,19 +150,26 @@ input:focus {
     background-color: #000;
 }
 
-/* Checkbox de consentimiento */
+/* Checkbox y términos */
 .form-group-ch {
     display: flex;
     align-items: center;
-    color: #000;
     font-size: 0.9em;
+    color: black;
 }
 
-.form-group-ch input[type="checkbox"] {
+.form-group-ch input {
     margin-right: 10px;
 }
 
-/* Enlaces */
+/* Estilo específico para los checkboxes */
+input[type="checkbox"] {
+    outline: none;
+    /* Quita el contorno al hacer clic o al enfocarlo */
+    background-color: transparent;
+    /* Asegura que no tenga fondo */
+}
+
 a {
     color: #ea210b;
     text-decoration: none;
@@ -172,17 +180,21 @@ a:hover {
     color: #000;
 }
 
-label[for="consent"] {
-    font-size: 0.9em;
-    /* Ajusta el tamaño a lo que necesites */
-    margin-bottom: 10px;
-
-}
-
-p {
+/* Signin link */
+.signin {
     text-align: center;
+    margin-top: 10px;
 }
 
+.signin a {
+    color: #ea210b;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.signin a:hover {
+    text-decoration: underline;
+}
 
 /* Footer */
 footer {
