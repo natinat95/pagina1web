@@ -146,6 +146,21 @@ nav ul li a:hover,
     border-radius: 15px;
 }
 
+/* Animación de desvanecimiento */
+@keyframes fade {
+    0%, 50%, 100% { opacity: 0; }
+    5%, 45% { opacity: 1; }
+}
+
+/* Aplicación de la animación al slider */
+.slider .slide {
+    animation: fade 10s infinite;
+}
+
+.slider .slide:nth-child(2) {
+    animation: fade 10s infinite 5s; /* Diferencia la animación de la segunda imagen */
+}
+
 .text {
     position: absolute;
     bottom: 20px;
