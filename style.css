@@ -266,7 +266,9 @@ nav ul li a:hover,
 #acceptCookies:hover {
     background-color: black;
 }
-
+#acceptCookies {
+    outline: none;
+} 
 
 /* FOOTER */
 footer {
