@@ -102,7 +102,7 @@ function validateForm() {
     const confirmPassword = document.getElementById("psw-repeat").value;
 
     if (password !== confirmPassword) {
-        document.getElementById("password-error").textContent = "Las contraseñas no coinciden. Por favor, intenta de nuevo.";
+        alert("Las contraseñas no coinciden. Por favor, intenta de nuevo.");
         return false;
     }
 
