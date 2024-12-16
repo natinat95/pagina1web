@@ -83,6 +83,7 @@ function validateEmail() {
 
 // Función para validar el formulario completo
 function validateForm() {
+    document.getElementById("password-error").textContent = "";
     // Validar el consentimiento de privacidad
     if (!document.getElementById("consent").checked) {
         alert("Debes aceptar el Aviso Legal y la Política de Privacidad.");
@@ -99,7 +100,7 @@ function validateForm() {
     const confirmPassword = document.getElementById("psw-repeat").value;
 
     if (password !== confirmPassword) {
-        alert("Las contraseñas no coinciden. Por favor, intenta de nuevo.");
+        document.getElementById("password-error").textContent = "Las contraseñas no coinciden. Por favor, intenta de nuevo.";
         return false;
     }
 
