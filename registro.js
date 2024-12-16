@@ -83,9 +83,6 @@ function validateEmail() {
 
 // Función para validar el formulario completo
 function validateForm() {
-    // Limpiar el mensaje de error
-    document.getElementById("password-error").textContent = "";
-
     // Validar el consentimiento de privacidad
     if (!document.getElementById("consent").checked) {
         alert("Debes aceptar el Aviso Legal y la Política de Privacidad.");
